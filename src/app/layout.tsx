@@ -14,17 +14,34 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.fielduo.com").replace(/\/$/, "");
+
 export const metadata: Metadata = {
   title: {
     default: "Fielduo – Future of Field Service Management",
     template: "%s | Fielduo",
   },
+  metadataBase: new URL(siteUrl),
   description:
-    "Simplify your operations, boost productivity, and deliver exceptional customer experiences with our all-in-one FSM platform.",
+    "Best field service management software in UK & Europe. Simplify operations, boost productivity, and deliver exceptional customer experiences with our all-in-one FSM platform.",
+  keywords: [
+    "field service management",
+    "best field services",
+    "FSM software",
+    "field service software UK",
+    "field service software Europe",
+    "dispatching",
+    "work order management",
+    "mobile workforce",
+    "Fielduo",
+  ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Fielduo – Future of Field Service Management",
     description:
-      "Simplify your operations, boost productivity, and deliver exceptional customer experiences with our all-in-one FSM platform.",
+      "Best field service management software in UK & Europe. Simplify operations, boost productivity, and deliver exceptional customer experiences with our all-in-one FSM platform.",
     siteName: "Fielduo",
     images: [
       {
@@ -40,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fielduo – Future of Field Service Management",
     description:
-      "Simplify your operations, boost productivity, and deliver exceptional customer experiences with our all-in-one FSM platform.",
+      "Best field service management software in UK & Europe. Simplify operations, boost productivity, and deliver exceptional customer experiences with our all-in-one FSM platform.",
     images: ["/logo.png"],
   },
   icons: {

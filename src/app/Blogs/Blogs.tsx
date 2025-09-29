@@ -19,6 +19,7 @@ const BlogPage = () => {
 
 
   const [posts, setPosts] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
@@ -27,83 +28,17 @@ const BlogPage = () => {
         const data = await res.json();
         setPosts(data?.items || []);
       } catch {}
+      finally { setIsLoading(false); }
     })();
   }, []);
 
-  const articles = [
-    {
-      category: 'technology',
-      title: 'How AI is Revolutionizing Field Service Operations',
-      slug: 'how-ai-is-revolutionizing-field-service-operations',
-      date: '9/3/2025',
-      readTime: '4 min read',
-      excerpt: 'The field service industry is experiencing a technological renaissance. From HVAC technicians to telecommunications engineers, AI is transforming how field services are delivered, scheduled, and optimized.',
-      author: 'Fielduo Team',
-      image: '🤖',
-      content: `The field service industry is experiencing a technological renaissance. From HVAC technicians to telecommunications engineers, AI is transforming how field services are delivered, scheduled, and optimized.
-      Artificial Intelligence is no longer a futuristic concept but a practical tool that's reshaping field service operations. Machine learning algorithms can now predict equipment failures before they happen, schedule technicians more efficiently, and provide real-time guidance during complex repairs.
-      One of the most significant impacts is in predictive maintenance. By analyzing historical data and current performance metrics, AI systems can identify patterns that precede equipment failures. This allows service companies to address issues before they cause downtime, saving both time and money.
-      Another area where AI excels is in optimizing technician schedules. Traditional scheduling methods often result in inefficient routes and wasted time. AI-powered scheduling tools consider factors like traffic, technician skills, and parts availability to create optimal schedules that maximize productivity.
-      During service calls, AI can provide technicians with real-time assistance through augmented reality interfaces. These systems can overlay digital information onto physical equipment, guiding technicians through complex repairs step by step.
-      As AI technology continues to evolve, we can expect even more sophisticated applications in field service operations. From autonomous drones for inspections to advanced natural language processing for customer interactions, the possibilities are endless.`
-    },
-    {
-      category: 'innovation',
-      title: 'The Impact of IoT on Predictive Maintenance in Field Services',
-      slug: 'the-impact-of-iot-on-predictive-maintenance-in-field-services',
-      date: '9/2/2025',
-      readTime: '5 min read',
-      excerpt: 'In today\'s rapidly evolving industrial landscape, the convergence of Internet of Things (IoT) technology and predictive maintenance is revolutionizing how field service businesses operate.',
-      author: 'Fielduo Team',
-      image: '📱',
-      content: `In today's rapidly evolving industrial landscape, the convergence of Internet of Things (IoT) technology and predictive maintenance is revolutionizing how field service businesses operate.
-      IoT devices are now embedded in equipment across virtually every industry, from manufacturing to healthcare. These sensors continuously collect data on equipment performance, environmental conditions, and usage patterns. This real-time data stream provides unprecedented visibility into the health of assets.
-      The true power of IoT in field services lies in its ability to enable predictive maintenance. By analyzing the data collected from IoT sensors, machine learning algorithms can identify subtle patterns that indicate impending failures. This allows service organizations to intervene before problems occur, minimizing downtime and reducing emergency repair costs.
-      One of the key benefits of IoT-enabled predictive maintenance is the shift from calendar-based maintenance to condition-based maintenance. Instead of performing maintenance on a fixed schedule, organizations can service equipment only when needed. This approach reduces unnecessary maintenance activities while preventing unexpected failures.
-      IoT technology also enhances the efficiency of field service operations. When a potential issue is detected, the system can automatically create a work order, identify the closest qualified technician, and ensure they have the necessary parts before dispatch. This level of automation significantly reduces response times and improves first-time fix rates.
-      As IoT technology continues to advance, we can expect even greater integration with other technologies like augmented reality and artificial intelligence. These combined technologies will create a seamless ecosystem for managing field service operations, from issue detection to resolution.`
-    },
-    {
-      category: 'guide',
-      title: 'The Ultimate Guide to Choosing the Right Service Scheduling Software',
-      slug: 'the-ultimate-guide-to-choosing-the-right-service-scheduling-software',
-      date: '9/1/2025',
-      readTime: '6 min read',
-      excerpt: 'Running a field service business without proper scheduling software is like trying to conduct an orchestra without a conductor. This guide helps you choose the right solution.',
-      author: 'Fielduo Team',
-      image: '📅',
-      content: `Running a field service business without proper scheduling software is like trying to conduct an orchestra without a conductor. This guide helps you choose the right solution.
-      Selecting the right service scheduling software is one of the most critical decisions a field service business can make. The right solution can streamline operations, improve customer satisfaction, and boost profitability, while the wrong choice can lead to inefficiency and frustration.
-      When evaluating scheduling software, start by identifying your specific needs. Consider factors like the size of your team, the complexity of your scheduling requirements, and any industry-specific challenges you face. A solution that works well for a small HVAC company might not be suitable for a large telecommunications provider.
-      Integration capabilities should be high on your priority list. The best scheduling software should seamlessly integrate with your existing systems, including CRM, inventory management, and accounting software. This integration eliminates data silos and ensures information flows smoothly across your organization.
-      Mobile functionality is non-negotiable in today's field service environment. Your technicians need access to schedules, customer information, and work orders on their mobile devices. Look for software that offers robust mobile apps with offline capabilities, ensuring productivity even in areas with poor connectivity.
-      Don't overlook the importance of user experience. Complex, difficult-to-use software will lead to low adoption rates among your team. Choose a solution with an intuitive interface that requires minimal training. This will help ensure your team embraces the new system and uses it effectively.
-      Finally, consider the scalability of the solution. Your business will grow and evolve, and your scheduling software should be able to grow with you. Look for flexible solutions that can accommodate increasing numbers of users, more complex scheduling scenarios, and additional functionality as your needs change.`
-    },
-    {
-      category: 'customer-service',
-      title: '5 Ways to Improve Customer Communication in Your Service Business',
-      slug: '5-ways-to-improve-customer-communication-in-your-service-business',
-      date: '9/1/2025',
-      readTime: '4 min read',
-      excerpt: 'In today\'s competitive service landscape, exceptional customer communication isn\'t just nice to have—it\'s essential for business growth and customer retention.',
-      author: 'Hari',
-      image: '💬',
-      content: `In today's competitive service landscape, exceptional customer communication isn't just nice to have—it's essential for business growth and customer retention.
-      Effective communication begins with setting clear expectations. When a customer schedules a service, they should receive immediate confirmation with all relevant details, including the appointment time, technician information, and what to expect during the visit. Automated notifications can keep customers informed about appointment status changes, reducing uncertainty and building trust.
-      Real-time tracking capabilities have become a customer expectation in the service industry. Providing customers with the ability to track their technician's location and estimated arrival time through a mobile app or web portal significantly enhances the customer experience. This transparency reduces the need for customers to call for updates and demonstrates respect for their time.
-      Personalized communication goes a long way in building customer relationships. Use customer data to tailor communications based on service history, preferences, and past interactions. Addressing customers by name and referencing previous services shows that you value their business and understand their specific needs.
-      Proactive communication about potential issues or delays can turn a negative situation into a positive customer experience. If a technician is running late or if an unexpected problem is discovered during service, notifying the customer immediately with an explanation and revised timeline helps maintain trust and reduces frustration.
-      Finally, establishing multiple communication channels ensures customers can interact with your business in the way that's most convenient for them. While phone calls remain important, offering options like text messaging, email, and chat accommodates different preferences and can improve response times.`
-    }
-  ];
+  const stripHtml = (html: string) => html.replace(/<[^>]*>/g, '');
 
 
   const handleReadMore = (article: any) => {
     if (article.slug) {
       router.push(`/Blogs/${article.slug}`);
     } else {
-      // For hardcoded articles, create a slug from title
       const slug = article.title.toLowerCase().replace(/[^a-z0-9\s-]/g, "").replace(/\s+/g, "-").replace(/-+/g, "-");
       router.push(`/Blogs/${slug}`);
     }
@@ -143,7 +78,17 @@ const BlogPage = () => {
             
           {/* Articles Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {(posts.length ? posts : articles).map((article: any, index: number) => (
+            {isLoading && (
+              <div className="col-span-full flex items-center justify-center py-16 text-gray-400">
+                Loading posts...
+              </div>
+            )}
+            {!isLoading && posts.length === 0 && (
+              <div className="col-span-full flex items-center justify-center py-16 text-gray-400">
+                No blog posts yet.
+              </div>
+            )}
+            {!isLoading && posts.map((article: any, index: number) => (
               <article 
                 key={index} 
                 className="group bg-gray-900 bg-opacity-80 backdrop-blur-sm rounded-3xl overflow-hidden border border-gray-800 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-blue-500/20"
@@ -170,10 +115,11 @@ const BlogPage = () => {
                       {/* Icon with better styling */}
                       <div className="relative z-10 flex flex-col items-center justify-center">
                         <div className="text-4xl mb-1 transform transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
-                          {article.image}
+                          {/* placeholder icon removed since we only render fetched posts */}
+                          📰
                         </div>
                         <div className="text-white/80 text-xs font-medium uppercase tracking-wider">
-                          {article.category || 'Article'}
+                      {'Article'}
                         </div>
                       </div>
                       
@@ -200,7 +146,7 @@ const BlogPage = () => {
                       <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
                       </svg>
-                      {article.createdAt ? new Date(article.createdAt).toLocaleDateString() : article.date}
+                    {article.createdAt ? new Date(article.createdAt).toLocaleDateString() : ''}
                     </span>
                     <span className="mx-2">•</span>
                     <span className="text-blue-400 font-medium text-xs">{article.author}</span>
@@ -211,7 +157,7 @@ const BlogPage = () => {
                   </h2>
                   
                   <p className="text-gray-300 mb-3 line-clamp-2 leading-relaxed text-sm">
-                    {article.summary || article.excerpt}
+                    {article.summary || stripHtml(article.content || '').slice(0, 160)}
                   </p>
                   
                   <button 

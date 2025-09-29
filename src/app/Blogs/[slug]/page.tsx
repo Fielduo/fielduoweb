@@ -4,6 +4,8 @@ import { useParams, useRouter } from 'next/navigation';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { getBlogPost } from './BlogPostContent';
+import Navbar from "../../Components/Navbar";
+import Footer from "../../Components/Footer";
 
 interface BlogPost {
   id: string;
@@ -89,6 +91,8 @@ const BlogPostPage = () => {
   }
 
   return (
+    <div>
+      <Navbar />
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden pt-20">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
@@ -199,6 +203,8 @@ const BlogPostPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
+    </div>
     </div>
   );
 };
