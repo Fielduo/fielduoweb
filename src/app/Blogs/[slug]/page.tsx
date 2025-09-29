@@ -152,9 +152,10 @@ const BlogPostPage = () => {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div className="text-gray-300 leading-relaxed whitespace-pre-line">
-              {blog.content}
-            </div>
+            <div
+              className="text-gray-300 leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: blog.content }}
+            />
           </div>
 
           {/* Article Footer */}

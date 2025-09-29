@@ -32,6 +32,13 @@ export default function AdminBlogs() {
     imageAlt: ''
   });
   const [isUploading, setIsUploading] = useState(false);
+  const exec = (command: string, value?: string) => {
+    if (typeof document !== 'undefined') {
+      document.execCommand(command, false, value);
+    }
+  };
+
+  const stripHtml = (html: string) => html.replace(/<[^>]*>/g, '');
 
   useEffect(() => {
     fetchBlogs();
@@ -226,13 +233,36 @@ export default function AdminBlogs() {
             
             <div>
               <label className="block text-sm font-medium text-gray-700">Content</label>
-              <textarea
-                value={formData.content}
-                onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                rows={6}
-                className="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
+              <div className="mt-1 border border-gray-300 rounded-md">
+                <div className="flex items-center gap-1 border-b border-gray-200 px-2 py-1 bg-gray-50">
+                  <button type="button" onMouseDown={(e) => e.preventDefault()} onClick={() => exec('bold')} className="px-2 py-1 text-sm font-semibold rounded hover:bg-gray-100">B</button>
+                  <button type="button" onMouseDown={(e) => e.preventDefault()} onClick={() => exec('italic')} className="px-2 py-1 text-sm italic rounded hover:bg-gray-100">I</button>
+                  <button type="button" onMouseDown={(e) => e.preventDefault()} onClick={() => exec('underline')} className="px-2 py-1 text-sm underline rounded hover:bg-gray-100">U</button>
+                  <span className="mx-1 h-4 w-px bg-gray-300" />
+                  <button type="button" onMouseDown={(e) => e.preventDefault()} onClick={() => exec('insertUnorderedList')} className="px-2 py-1 text-sm rounded hover:bg-gray-100">• List</button>
+                  <button type="button" onMouseDown={(e) => e.preventDefault()} onClick={() => exec('insertOrderedList')} className="px-2 py-1 text-sm rounded hover:bg-gray-100">1. List</button>
+                  <span className="mx-1 h-4 w-px bg-gray-300" />
+                  <button
+                    type="button"
+                    onMouseDown={(e) => e.preventDefault()}
+                    onClick={() => { exec('removeFormat'); exec('formatBlock', 'p'); }}
+                    className="px-2 py-1 text-sm rounded hover:bg-gray-100"
+                    title="Clear formatting"
+                  >
+                    Normal
+                  </button>
+                </div>
+                <div
+                  role="textbox"
+                  aria-label="Rich text editor"
+                  contentEditable
+                  suppressContentEditableWarning
+                  className="min-h-40 max-h-[50vh] overflow-auto px-3 py-2 focus:outline-none prose prose-sm max-w-none"
+                  onInput={(e) => setFormData({ ...formData, content: (e.currentTarget as HTMLDivElement).innerHTML })}
+                  dangerouslySetInnerHTML={{ __html: formData.content }}
+                />
+              </div>
+              <p className="mt-1 text-xs text-gray-500">You can format text with bold, italic, underline, and lists.</p>
             </div>
             
             <div>
@@ -367,7 +397,7 @@ export default function AdminBlogs() {
                         )}
                       </div>
                       <p className="text-sm text-gray-600 mt-1">By {blog.author}</p>
-                      <p className="text-sm text-gray-500 mt-2 line-clamp-2">{blog.content}</p>
+                      <p className="text-sm text-gray-500 mt-2 line-clamp-2">{stripHtml(blog.content)}</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4 mt-3">
