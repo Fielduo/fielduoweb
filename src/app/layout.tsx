@@ -15,7 +15,37 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fielduo service solutions",
+  title: {
+    default: "Fielduo – Future of Field Service Management",
+    template: "%s | Fielduo",
+  },
+  description:
+    "Simplify your operations, boost productivity, and deliver exceptional customer experiences with our all-in-one FSM platform.",
+  openGraph: {
+    title: "Fielduo – Future of Field Service Management",
+    description:
+      "Simplify your operations, boost productivity, and deliver exceptional customer experiences with our all-in-one FSM platform.",
+    siteName: "Fielduo",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Fielduo – Future of Field Service Management",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fielduo – Future of Field Service Management",
+    description:
+      "Simplify your operations, boost productivity, and deliver exceptional customer experiences with our all-in-one FSM platform.",
+    images: ["/logo.png"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
