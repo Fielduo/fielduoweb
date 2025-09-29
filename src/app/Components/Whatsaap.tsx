@@ -54,7 +54,7 @@ const Whatsapp = () => {
 
   const handleWhatsApp = () => {
     const phoneNumber = '+14159157065';
-    const message = 'Hello FieldUo! I would like to learn more about your field service management solutions.';
+    const message = 'Hello Fielduo! I would like to learn more about your field service management solutions.';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -66,7 +66,7 @@ const Whatsapp = () => {
   const handleEmail = () => {
     const email = 'sales@fielduo.com';
     const subject = 'Inquiry about Field Service Management Solutions';
-    const body = 'Hello FieldUo Team,\n\nI would like to learn more about your field service management platform and how it can help my business...';
+    const body = 'Hello Fielduo Team,\n\nI would like to learn more about your field service management platform and how it can help my business...';
     const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailtoUrl, '_self');
   };
@@ -157,7 +157,7 @@ const Whatsapp = () => {
               ? 'bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white' 
               : 'bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white'
           }`}
-          title={isOpen ? 'Close Menu' : 'Contact FieldUo Support'}
+          title={isOpen ? 'Close Menu' : 'Contact Fielduo Support'}
         >
           <div 
             className="transition-all duration-500"
@@ -177,7 +177,7 @@ const Whatsapp = () => {
       {!isOpen && (
         <div className="absolute bottom-full right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
           <div className="bg-gray-800 text-white text-xs sm:text-sm py-1 sm:py-2 px-2 sm:px-3 rounded-lg">
-            Need Help? Contact FieldUo!
+            Need Help? Contact Fielduo!
             <div className="absolute top-full right-4 w-0 h-0 border-l-3 border-r-3 border-t-3 sm:border-l-4 sm:border-r-4 sm:border-t-4 border-l-transparent border-r-transparent border-t-gray-800"></div>
           </div>
         </div>
