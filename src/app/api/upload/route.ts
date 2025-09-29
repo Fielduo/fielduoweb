@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { writeFile, mkdir } from "fs/promises";
-import { join } from "path";
 import { withAdminAuth } from "@/lib/admin-api";
+import { getCloudinary, getUploadFolder } from "@/lib/cloudinary";
 
 export const runtime = "nodejs";
 
@@ -35,32 +34,40 @@ export const POST = withAdminAuth(async (request: NextRequest, user: any) => {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    // Generate unique filename
-    const timestamp = Date.now();
-    const randomString = Math.random().toString(36).substring(2, 15);
-    const fileExtension = file.name.split('.').pop();
-    const fileName = `${timestamp}-${randomString}.${fileExtension}`;
-
-    // Ensure uploads directory exists
-    const uploadsDir = join(process.cwd(), "public", "uploads", "blog-images");
-    try {
-      await mkdir(uploadsDir, { recursive: true });
-    } catch (error) {
-      // Directory might already exist, ignore error
+    const cloudinary = getCloudinary();
+    if (!process.env.CLOUDINARY_CLOUD_NAME || !process.env.CLOUDINARY_API_KEY || !process.env.CLOUDINARY_API_SECRET) {
+      return NextResponse.json({ success: false, message: "Cloudinary is not configured on the server" }, { status: 500 });
     }
 
-    // Save file
-    const path = join(uploadsDir, fileName);
-    await writeFile(path, buffer);
+    const folder = getUploadFolder();
 
-    // Return the public URL
-    const imageUrl = `/uploads/blog-images/${fileName}`;
+    const uploadResult = await new Promise<any>((resolve, reject) => {
+      const uploadStream = cloudinary.uploader.upload_stream(
+        {
+          folder,
+          resource_type: "image",
+          overwrite: false,
+          transformation: [
+            // Auto format and quality for web delivery
+            { fetch_format: "auto", quality: "auto" },
+          ],
+        },
+        (error, result) => {
+          if (error) return reject(error);
+          resolve(result);
+        }
+      );
+      uploadStream.end(buffer);
+    });
 
-    return NextResponse.json({ 
-      success: true, 
-      imageUrl,
-      fileName,
-      message: "File uploaded successfully" 
+    return NextResponse.json({
+      success: true,
+      imageUrl: uploadResult.secure_url,
+      publicId: uploadResult.public_id,
+      width: uploadResult.width,
+      height: uploadResult.height,
+      format: uploadResult.format,
+      message: "File uploaded successfully",
     });
 
   } catch (error) {
