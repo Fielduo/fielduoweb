@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Simple, clean text editor styling */
+[contenteditable="true"] {
+  direction: ltr;
+  text-align: left;
+}
+
+[contenteditable="true"]:focus {
+  outline: none;
+}

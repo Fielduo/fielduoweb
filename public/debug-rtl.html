@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTL Direction Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            direction: ltr;
+            text-align: left;
+        }
+        .test-editor {
+            border: 2px solid #ccc;
+            padding: 10px;
+            min-height: 100px;
+            margin: 10px 0;
+            direction: ltr !important;
+            text-align: left !important;
+            unicode-bidi: embed;
+        }
+        .debug-info {
+            background: #f0f0f0;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>RTL Direction Debug Test</h1>
+    
+    <div class="debug-info">
+        <strong>System Info:</strong><br>
+        Document Direction: <span id="doc-dir"></span><br>
+        Body Direction: <span id="body-dir"></span><br>
+        Language: <span id="lang"></span><br>
+        User Agent: <span id="ua"></span><br>
+    </div>
+
+    <h2>Test Cases:</h2>
+    
+    <h3>1. Regular div with text:</h3>
+    <div class="test-editor">Adeeb Test Content</div>
+    
+    <h3>2. ContentEditable div:</h3>
+    <div class="test-editor" contenteditable="true" id="editable1">Adeeb Test Content</div>
+    
+    <h3>3. ContentEditable with forced LTR:</h3>
+    <div class="test-editor" contenteditable="true" id="editable2" style="direction: ltr !important; text-align: left !important;">Adeeb Test Content</div>
+    
+    <h3>4. Input field for comparison:</h3>
+    <input type="text" value="Adeeb Test Content" style="width: 300px; padding: 10px;">
+    
+    <div class="debug-info">
+        <strong>Live Test:</strong><br>
+        Type in the contentEditable above and see results here:<br>
+        <div id="live-output"></div>
+    </div>
+
+    <script>
+        // Debug information
+        document.getElementById('doc-dir').textContent = document.documentElement.dir || 'not set';
+        document.getElementById('body-dir').textContent = getComputedStyle(document.body).direction;
+        document.getElementById('lang').textContent = document.documentElement.lang || 'not set';
+        document.getElementById('ua').textContent = navigator.userAgent.substring(0, 100) + '...';
+        
+        // Monitor contentEditable input
+        const editable1 = document.getElementById('editable1');
+        const editable2 = document.getElementById('editable2');
+        const output = document.getElementById('live-output');
+        
+        function updateOutput(element) {
+            const text = element.textContent;
+            const computedStyle = getComputedStyle(element);
+            output.innerHTML = `
+                Text: "${text}"<br>
+                Length: ${text.length}<br>
+                Direction: ${computedStyle.direction}<br>
+                Text-align: ${computedStyle.textAlign}<br>
+                Unicode-bidi: ${computedStyle.unicodeBidi}<br>
+                Char codes: ${text.split('').map(c => c.charCodeAt(0)).join(', ')}<br>
+                Time: ${new Date().toLocaleTimeString()}
+            `;
+        }
+        
+        editable1.addEventListener('input', () => updateOutput(editable1));
+        editable2.addEventListener('input', () => updateOutput(editable2));
+        
+        // Initial update
+        updateOutput(editable1);
+        
+        console.log('Debug test page loaded');
+        console.log('Document direction:', document.documentElement.dir);
+        console.log('Body direction:', getComputedStyle(document.body).direction);
+    </script>
+</body>
+</html>

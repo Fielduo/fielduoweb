@@ -1,0 +1,50 @@
+/* Basic layout styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9fb;
+}
+
+/* Ensure proper text direction for all content */
+[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Blog content editor specific styles */
+[role="textbox"] {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: bidi-override !important;
+}
+
+[role="textbox"] img {
+  display: block !important;
+  margin: 20px auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Image container styles */
+.image-container {
+  text-align: center !important;
+  margin: 20px 0 !important;
+  clear: both !important;
+}
+
+.blog-image {
+  display: block !important;
+  margin: 0 auto !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
