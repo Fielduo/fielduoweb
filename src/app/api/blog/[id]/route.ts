@@ -96,26 +96,43 @@ export const PUT = withAdminAuth(async (request: Request, user: any) => {
   }
 
   const updatedAt = new Date().toISOString();
-  const updateData = { 
-    title, 
-    summary, 
-    content, 
-    author, 
-    published, 
-    tags, 
-    slug, 
+  // Build update operators to allow unsetting image fields when empty strings are sent
+  const setData: any = {
+    title,
+    summary,
+    content,
+    author,
+    published,
+    tags,
+    slug,
     updatedAt,
-    ...(imageUrl && { imageUrl }),
-    ...(imageAlt && { imageAlt })
   };
+  const unsetData: any = {};
+
+  if (imageUrl) {
+    setData.imageUrl = imageUrl;
+  } else if (body?.hasOwnProperty('imageUrl')) {
+    // Explicitly unset when client sends empty string/null
+    unsetData.imageUrl = "";
+  }
+
+  if (imageAlt) {
+    setData.imageAlt = imageAlt;
+  } else if (body?.hasOwnProperty('imageAlt')) {
+    unsetData.imageAlt = "";
+  }
 
   try {
     if (process.env.MONGODB_URI) {
       const client = await getMongoClient();
       const db = client.db(process.env.MONGODB_DB || "fielduo");
+      const updateOps: any = { $set: setData };
+      if (Object.keys(unsetData).length > 0) {
+        updateOps.$unset = unsetData;
+      }
       const result = await db
         .collection<BlogPost>("blog")
-        .updateOne({ id }, { $set: updateData });
+        .updateOne({ id }, updateOps);
       
       if (result.matchedCount > 0) {
         return NextResponse.json({ ok: true, message: "Blog updated successfully" }, { status: 200 });
@@ -127,7 +144,10 @@ export const PUT = withAdminAuth(async (request: Request, user: any) => {
 
   const blogIndex = memory.findIndex(b => b.id === id);
   if (blogIndex !== -1) {
-    memory[blogIndex] = { ...memory[blogIndex], ...updateData };
+    const next = { ...memory[blogIndex], ...setData } as any;
+    if (unsetData.imageUrl !== undefined) delete next.imageUrl;
+    if (unsetData.imageAlt !== undefined) delete next.imageAlt;
+    memory[blogIndex] = next;
     return NextResponse.json({ ok: true, message: "Blog updated successfully" }, { status: 200 });
   }
 

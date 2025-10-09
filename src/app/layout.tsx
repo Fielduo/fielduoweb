@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Fielduo – Future of Field Service Management",
     description:
-      "Best field service management software in UK & Europe. Simplify operations, boost productivity, and deliver exceptional customer experiences with our all-in-one FSM platform.",
+      "Best field service management software in USA, UK & Europe. Simplify operations, boost productivity, and deliver exceptional customer experiences with our all-in-one FSM platform.",
     siteName: "Fielduo",
     images: [
       {
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fielduo – Future of Field Service Management",
     description:
-      "Best field service management software in UK & Europe. Simplify operations, boost productivity, and deliver exceptional customer experiences with our all-in-one FSM platform.",
+      "Best field service management software in USA, UK & Europe. Simplify operations, boost productivity, and deliver exceptional customer experiences with our all-in-one FSM platform.",
     images: ["/logo.png"],
   },
   icons: {
