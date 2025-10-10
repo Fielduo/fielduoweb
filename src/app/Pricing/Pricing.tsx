@@ -98,8 +98,7 @@ const PricingPage = () => {
     { name: "Oracle Field Service", price: "$100", type: "Professional", savings: "Up to $64/month (64%)" },
     { name: "FieldAware Basic", price: "$70", type: "Basic", savings: "Up to $34/month (49%)" },
     { name: "IFS Field Service", price: "$65", type: "Basic", savings: "Up to $29/month (45%)" },
-    { name: "Zuper Starter", price: "$65", type: "Starter", savings: "Up to $29/month (45%)" },
-    { name: "Jobber Core", price: "$39", type: "Individual", savings: "Up to $3/month (8%)" }
+    { name: "Zuper Starter", price: "$65", type: "Starter", savings: "Up to $29/month (45%)" }
   ];
   
   const addOns = [
@@ -278,7 +277,7 @@ const PricingPage = () => {
               >
                 {currencies.map(currency => (
                   <option key={currency.code} value={currency.code}>
-                    {currency.code} - {currency.name}
+                    {currency.code} 
                   </option>
                 ))}
               </select>
@@ -312,7 +311,7 @@ const PricingPage = () => {
                     </div>
                   )}
                   <div className="text-gray-400 text-sm mt-1">
-                    {selectedCurrency} - {currencies.find(c => c.code === selectedCurrency)?.name}
+                    {selectedCurrency}
                   </div>
                 </div>
                 
