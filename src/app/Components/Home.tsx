@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Head from 'next/head';
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -161,6 +162,10 @@ export default function Home() {
   };
 
   return (
+    <>
+    <Head>
+        <link rel="canonical" href="https://fielduo.com/" />
+      </Head>
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden relative">
       {/* Dynamic background that follows mouse */}
       <div 
@@ -475,5 +480,6 @@ export default function Home() {
         }
       `}</style>
     </div>
+    </>
   );
 }

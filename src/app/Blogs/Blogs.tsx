@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Head from 'next/head';
 
 const BlogPage = () => {
   const router = useRouter();
@@ -45,6 +46,11 @@ const BlogPage = () => {
   };
 
   return (
+    <>
+      <Head>
+        <link rel="canonical" href="https://fielduo.com/blogs/" />
+      </Head>
+    
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden pt-20">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
@@ -201,6 +207,7 @@ const BlogPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
