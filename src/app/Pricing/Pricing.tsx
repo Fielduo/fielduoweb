@@ -23,17 +23,35 @@ const PricingPage = () => {
 
   const currencies = [
     { code: 'USD', symbol: '$', name: 'US Dollar' },
-    { code: 'EUR', symbol: '€', name: 'Euro' },
     { code: 'GBP', symbol: '£', name: 'British Pound' },
     { code: 'INR', symbol: '₹', name: 'Indian Rupee' },
-    { code: 'USD', symbol: '$', name: 'US Dollar' }
+    { code: 'AED', symbol: 'د.إ', name: 'UAE Dirham' },
+    { code: 'CHF', symbol: 'CHF', name: 'Swiss Franc' },
+    { code: 'HKD', symbol: 'HK$', name: 'Hong Kong Dollar' },
+    { code: 'CAD', symbol: 'C$', name: 'Canadian Dollar' }
   ];
 
   const pricingTiers = [
     {
       name: "STARTER PLAN",
-      monthlyPrice: { USD: "$36", EUR: "€31", GBP: "£27", INR: "₹3,182" },
-      yearlyPrice: { USD: "$30.00", EUR: "€25.44", GBP: "£22.20", INR: "₹2,652" },
+      monthlyPrice: { 
+        USD: "$36", 
+        GBP: "£24", 
+        INR: "₹736", 
+        AED: "د.إ83", 
+        CHF: "CHF35", 
+        HKD: "HK$202", 
+        CAD: "C$40" 
+      },
+      yearlyPrice: { 
+        USD: "$30.00", 
+        GBP: "£20.00", 
+        INR: "₹613", 
+        AED: "د.إ69", 
+        CHF: "CHF29", 
+        HKD: "HK$168", 
+        CAD: "C$34" 
+      },
       savings: "79% cheaper than Salesforce",
       description: "Perfect for Small Businesses (1-5 Technicians)",
       features: [
@@ -53,8 +71,24 @@ const PricingPage = () => {
     },
     {
       name: "PROFESSIONAL PLAN",
-      monthlyPrice: { USD: "$72", EUR: "€61", GBP: "£53", INR: "₹6,365" },
-      yearlyPrice: { USD: "$60.00", EUR: "€50.88", GBP: "£44.40", INR: "₹5,304" },
+      monthlyPrice: { 
+        USD: "$72", 
+        GBP: "£48", 
+        INR: "₹1,472", 
+        AED: "د.إ167", 
+        CHF: "CHF70", 
+        HKD: "HK$404", 
+        CAD: "C$81" 
+      },
+      yearlyPrice: { 
+        USD: "$60.00", 
+        GBP: "£40.00", 
+        INR: "₹1,226", 
+        AED: "د.إ139", 
+        CHF: "CHF58", 
+        HKD: "HK$336", 
+        CAD: "C$68" 
+      },
       savings: "59% cheaper than Salesforce",
       description: "Perfect for 6-15 Technicians",
       features: [
@@ -72,8 +106,24 @@ const PricingPage = () => {
     },
     {
       name: "ENTERPRISE PLAN",
-      monthlyPrice: { USD: "$120", EUR: "€102", GBP: "£89", INR: "₹10,608" },
-      yearlyPrice: { USD: "$100.00", EUR: "€84.80", GBP: "£74.00", INR: "₹8,840" },
+      monthlyPrice: { 
+        USD: "$120", 
+        GBP: "£81", 
+        INR: "₹2,453", 
+        AED: "د.إ279", 
+        CHF: "CHF116", 
+        HKD: "HK$673", 
+        CAD: "C$136" 
+      },
+      yearlyPrice: { 
+        USD: "$100.00", 
+        GBP: "£67.00", 
+        INR: "₹2,044", 
+        AED: "د.إ232", 
+        CHF: "CHF97", 
+        HKD: "HK$561", 
+        CAD: "C$113" 
+      },
       savings: "31% cheaper than Salesforce",
       description: "Perfect for 16+ Technicians",
       features: [
