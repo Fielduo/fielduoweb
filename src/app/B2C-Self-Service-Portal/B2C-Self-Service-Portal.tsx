@@ -2,6 +2,8 @@
 'use client';
 import { useState, useEffect, useRef } from 'react'; // Added useRef to the import
 import Head from 'next/head';
+import { useRouter } from 'next/navigation';
+
 export default function B2CSelfServicePortal() {
   const [activeFaq, setActiveFaq] = useState(null);
   const [hoveredFeature, setHoveredFeature] = useState(null);
@@ -12,6 +14,8 @@ export default function B2CSelfServicePortal() {
   });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const sectionRef = useRef(null);
+  const router = useRouter();
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
@@ -212,12 +216,14 @@ export default function B2CSelfServicePortal() {
               </div>
               
               <div className="flex flex-col sm:flex-row justify-center gap-6">
-                <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
+                <button 
+                  onClick={() => router.push('/Contact')}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
                   Get Started
                 </button>
-                <button className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
+                {/* <button className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
                   Learn More
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
@@ -295,7 +301,9 @@ export default function B2CSelfServicePortal() {
             <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-12">
               Join thousands of businesses already using our platform to enhance customer experience.
             </p>
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
+            <button 
+              onClick={() => router.push('/Contact')}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
               Request Demo
             </button>
           </div>
@@ -359,10 +367,14 @@ export default function B2CSelfServicePortal() {
               Join leading businesses who trust our platform to deliver exceptional self-service experiences.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
+              <button 
+                onClick={() => router.push('/Contact')}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
                 Schedule Consultation
               </button>
-              <button className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
+              <button 
+                onClick={() => router.push('/Contact')}
+                className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
                 View Documentation
               </button>
             </div>

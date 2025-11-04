@@ -4,9 +4,12 @@ import { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function CorePlatformCapabilities() {
   const [activeFaq, setActiveFaq] = useState(null);
+  const router = useRouter();
+
   
   useEffect(() => {
     AOS.init({
@@ -354,7 +357,9 @@ export default function CorePlatformCapabilities() {
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
             Join thousands of field service businesses transforming their operations with Fielduo.
           </p>
-          <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30" data-aos="fade-up" data-aos-delay="200">
+          <button 
+            onClick={() => router.push('/Contact')}
+            className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30" data-aos="fade-up" data-aos-delay="200">
             Start Free Trial
           </button>
         </div>
