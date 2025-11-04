@@ -3,9 +3,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import { useRouter } from 'next/navigation';
 
 const FlooringServicesPage = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  const router = useRouter();
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -180,6 +182,7 @@ const FlooringServicesPage = () => {
                 Explore Features
               </motion.button>
               <motion.button
+                onClick={() => router.push('/Contact')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-3 bg-transparent border-2 border-gray-600 rounded-lg font-semibold text-white hover:bg-gray-900 transition-all duration-300"
@@ -313,6 +316,7 @@ const FlooringServicesPage = () => {
                 ))}
               </ul>
               <motion.button
+                onClick={() => router.push('/Contact')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="mt-8 px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-lg font-semibold text-white shadow-lg"
@@ -457,6 +461,7 @@ const FlooringServicesPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <motion.button
+                onClick={() => router.push('/Contact')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-lg font-semibold text-white shadow-lg"
@@ -464,6 +469,7 @@ const FlooringServicesPage = () => {
                 Get Started Today
               </motion.button>
               <motion.button
+                onClick={() => router.push('/Contact')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-3 bg-transparent border-2 border-gray-600 rounded-lg font-semibold text-white hover:bg-gray-900 transition-all duration-300"

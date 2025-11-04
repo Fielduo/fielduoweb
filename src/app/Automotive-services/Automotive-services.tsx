@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { motion, Variants } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 const AutomotiveServicesPage = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [isMounted, setIsMounted] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setIsMounted(true);
@@ -323,6 +325,7 @@ const AutomotiveServicesPage = () => {
             className="flex flex-wrap justify-center gap-4"
           >
             <motion.button
+              onClick={() => router.push('/Contact')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-lg shadow-red-500/20"
@@ -330,6 +333,7 @@ const AutomotiveServicesPage = () => {
               Explore Features
             </motion.button>
             <motion.button
+              onClick={() => router.push('/Contact')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-transparent border-2 border-red-500 text-red-400 hover:bg-red-900/50 font-semibold py-3 px-8 rounded-lg transition duration-300"
@@ -488,6 +492,7 @@ const AutomotiveServicesPage = () => {
           >
             <h3 className="text-2xl font-bold mb-6">Schedule a Demo</h3>
             <motion.button
+              onClick={() => router.push('/Contact')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-lg shadow-red-500/20"
@@ -646,6 +651,7 @@ const AutomotiveServicesPage = () => {
             className="flex flex-wrap justify-center gap-4"
           >
             <motion.button
+              onClick={() => router.push('/Contact')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-lg shadow-red-500/20"
@@ -653,6 +659,7 @@ const AutomotiveServicesPage = () => {
               Get Started Today
             </motion.button>
             <motion.button
+              onClick={() => router.push('/Contact')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-transparent border-2 border-red-500 text-red-400 hover:bg-red-900/50 font-semibold py-3 px-8 rounded-lg transition duration-300"

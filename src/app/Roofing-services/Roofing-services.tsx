@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { motion, Variants } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 const RoofingServicesPage = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [isMounted, setIsMounted] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setIsMounted(true);
@@ -341,7 +343,9 @@ const RoofingServicesPage = () => {
             <button className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
               Explore Features
             </button>
-            <button className="bg-transparent border-2 border-amber-600 hover:bg-amber-600/10 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+            <button 
+              onClick={() => router.push('/Contact')}
+              className="bg-transparent border-2 border-amber-600 hover:bg-amber-600/10 text-white font-bold py-3 px-8 rounded-full transition duration-300">
               See Demo
             </button>
           </motion.div>
@@ -619,10 +623,14 @@ const RoofingServicesPage = () => {
               Join leading roofing contractors who trust Fielduo for their field service management
             </motion.p>
             <motion.div variants={fadeIn('up', 'tween', 0.4, 0.75)} className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+              <button 
+                onClick={() => router.push('/Contact')}
+                className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
                 Get Started Today
               </button>
-              <button className="bg-transparent border-2 border-amber-600 hover:bg-amber-600/10 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+              <button 
+                onClick={() => router.push('/Contact')}
+                className="bg-transparent border-2 border-amber-600 hover:bg-amber-600/10 text-white font-bold py-3 px-8 rounded-full transition duration-300">
                 Contact Sales
               </button>
             </motion.div>

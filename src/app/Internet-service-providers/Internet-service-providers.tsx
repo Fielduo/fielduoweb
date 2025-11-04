@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { motion, Variants } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 const InternetServiceProviderPage = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [isMounted, setIsMounted] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setIsMounted(true);
@@ -382,7 +384,9 @@ const InternetServiceProviderPage = () => {
           </motion.p>
           
           <motion.div variants={fadeIn('up', 'tween', 0.5, 0.75)}>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+            <button 
+              onClick={() => router.push('/Contact')}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
               Request a Demo
             </button>
           </motion.div>

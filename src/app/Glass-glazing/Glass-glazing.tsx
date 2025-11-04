@@ -3,11 +3,13 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import { FiChevronDown, FiChevronUp, FiPlay, FiCheck, FiShield, FiCalendar, FiFileText, FiGrid, FiClipboard, FiStar } from 'react-icons/fi';
+import { useRouter } from 'next/navigation';
 
 const GlassGlazing = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -268,6 +270,7 @@ const GlassGlazing = () => {
               transition={{ delay: 0.7, duration: 0.8 }}
             >
               <motion.button
+                onClick={() => router.push('/Contact')}
                 whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(245, 158, 11, 0.5)" }}
                 whileTap={{ scale: 0.98 }}
                 className="px-8 py-4 bg-amber-600 hover:bg-amber-700 rounded-xl font-bold text-white shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
@@ -438,6 +441,7 @@ const GlassGlazing = () => {
                 </p>
               </div>
               <motion.button
+                onClick={() => router.push('/Contact')}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 className="px-8 py-4 bg-amber-600 hover:bg-amber-700 rounded-xl font-bold text-white shadow-lg transition-all duration-300 whitespace-nowrap"
@@ -582,6 +586,7 @@ const GlassGlazing = () => {
                     </div>
                     
                     <motion.button 
+                      onClick={() => router.push('/Contact')}
                       className="w-full px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded-xl font-bold transition-all duration-300"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
@@ -802,6 +807,7 @@ const GlassGlazing = () => {
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <motion.button 
+                onClick={() => router.push('/Contact')}
                 className="px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded-xl font-bold text-lg shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(245, 158, 11, 0.5)" }}
                 whileTap={{ scale: 0.98 }}
@@ -811,6 +817,7 @@ const GlassGlazing = () => {
               </motion.button>
               
               <motion.button 
+                onClick={() => router.push('/Contact')}
                 className="px-8 py-4 bg-transparent hover:bg-white/10 text-white rounded-xl font-bold text-lg transition-all duration-300 border-2 border-white/20 flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.05, borderColor: "rgba(255,255,255,0.5)" }}
                 whileTap={{ scale: 0.98 }}

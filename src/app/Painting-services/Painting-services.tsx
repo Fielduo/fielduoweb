@@ -6,10 +6,12 @@ import { useState, useEffect, useRef } from 'react';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import { FiPlay } from 'react-icons/fi';
+import { useRouter } from 'next/navigation';
 
 const PaintingServices = () => {
   const [activeTab, setActiveTab] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -268,6 +270,7 @@ const PaintingServices = () => {
         transition={{ delay: 0.7, duration: 0.8 }}
       >
         <motion.button
+          onClick={() => router.push('/Contact')}
           whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(245, 158, 11, 0.5)" }}
           whileTap={{ scale: 0.98 }}
           className="px-8 py-4 bg-amber-600 hover:bg-amber-700 rounded-xl font-bold text-white shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
@@ -399,6 +402,7 @@ const PaintingServices = () => {
                     See how Fielduo can transform your painting business with a personalized demonstration tailored to your specific needs.
                   </p>
                   <motion.button 
+                    onClick={() => router.push('/Contact')}
                     className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-all duration-300 w-full"
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
@@ -514,6 +518,7 @@ const PaintingServices = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button 
+                onClick={() => router.push('/Contact')}
                 className="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -521,6 +526,7 @@ const PaintingServices = () => {
                 Get Started Today
               </motion.button>
               <motion.button 
+                onClick={() => router.push('/Contact')}
                 className="px-8 py-3 bg-transparent hover:bg-white/10 text-white rounded-lg transition-all duration-300 border border-white/30"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
