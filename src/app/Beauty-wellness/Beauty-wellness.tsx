@@ -1,14 +1,19 @@
 "use client";
 
 // pages/index.js
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useRef } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/navigation';
 
 export default function BeautyWellness() {
   const [isVisible, setIsVisible] = useState(false);
   const router = useRouter();
+  const featuresRef = useRef<HTMLDivElement | null>(null);
 
+  const scrollToFeatures = () => {
+    featuresRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+  
   useEffect(() => {
     setIsVisible(true);
   }, []);
@@ -45,7 +50,9 @@ export default function BeautyWellness() {
             Mobile beauty, wellness, and personal care services
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
+            <button 
+              onClick={scrollToFeatures}
+              className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
               Explore Features
             </button>
             <button 
@@ -64,7 +71,7 @@ export default function BeautyWellness() {
       </section>
 
       {/* Key Features Section */}
-      <section className="py-20 px-4">
+      <section ref={featuresRef} className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Key Features</h2>
           <p className="text-center text-xl text-gray-300 mb-16 max-w-3xl mx-auto">

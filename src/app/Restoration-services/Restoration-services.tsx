@@ -48,6 +48,11 @@ const RestorationServices = () => {
   const [activeTab, setActiveTab] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const router = useRouter();
+  const featuresRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToFeatures = () => {
+    featuresRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -361,6 +366,7 @@ const RestorationServices = () => {
             className="flex flex-wrap justify-center gap-4"
           >
             <motion.button
+              onClick={scrollToFeatures}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-lg shadow-blue-500/20"
@@ -380,7 +386,7 @@ const RestorationServices = () => {
       </section>
       
       {/* Key Features Section */}
-      <section className="py-20 px-4 md:px-8">
+      <section ref={featuresRef} className="py-20 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <motion.div 
             className="text-center mb-16"

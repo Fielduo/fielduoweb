@@ -10,6 +10,11 @@ const GlassGlazing = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const router = useRouter();
+  const featuresRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToFeatures = () => {
+    featuresRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -280,6 +285,7 @@ const GlassGlazing = () => {
               </motion.button>
               
               <motion.button
+                onClick={scrollToFeatures}
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
                 whileTap={{ scale: 0.98 }}
                 className="px-8 py-4 bg-transparent border-2 border-white/20 rounded-xl font-bold text-white hover:border-white/40 transition-all duration-300"
@@ -306,7 +312,7 @@ const GlassGlazing = () => {
       </section>
       
       {/* Key Features Section */}
-      <section className="py-24 px-4 md:px-8 relative">
+      <section ref={featuresRef} className="py-24 px-4 md:px-8 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black to-neutral-900 z-0"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div 

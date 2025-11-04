@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useRef } from 'react';
 import Head from 'next/head';
 import { motion, Variants } from 'framer-motion';
 import { useRouter } from 'next/navigation';
@@ -9,6 +9,11 @@ const EnergyUtilitiesPage = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [isMounted, setIsMounted] = useState(false);
   const router = useRouter();
+  const featuresRef = useRef<HTMLDivElement | null>(null);
+  
+  const scrollToFeatures = () => {
+    featuresRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   useEffect(() => {
     setIsMounted(true);
@@ -347,7 +352,7 @@ const EnergyUtilitiesPage = () => {
             className="flex flex-wrap justify-center gap-4"
           >
             <motion.button
-              onClick={() => router.push('/Contact')}
+              onClick={scrollToFeatures}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-yellow-600 to-amber-500 hover:from-yellow-700 hover:to-amber-600 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-lg shadow-yellow-500/20"
@@ -389,7 +394,7 @@ const EnergyUtilitiesPage = () => {
       </section>
 
       {/* Key Features Section */}
-      <section className="py-20 px-4 md:px-8 relative">
+      <section ref={featuresRef} className="py-20 px-4 md:px-8 relative">
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/2 left-1/2 w-full h-full bg-gradient-to-r from-transparent to-amber-500/5 blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
         </div>

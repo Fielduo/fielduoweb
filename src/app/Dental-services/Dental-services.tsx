@@ -9,6 +9,11 @@ const DentalServices = () => {
   const [activeTab, setActiveTab] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const router = useRouter();
+  const featuresRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToFeatures = () => {
+    featuresRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -434,6 +439,7 @@ const DentalServices = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <motion.button 
+              onClick={scrollToFeatures}
               className="px-8 py-3 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -453,7 +459,7 @@ const DentalServices = () => {
       </section>
       
       {/* Key Features Section */}
-      <section className="py-20 px-4 md:px-8">
+      <section ref={featuresRef} className="py-20 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <motion.div 
             className="text-center mb-16"

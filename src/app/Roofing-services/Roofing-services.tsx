@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useRef } from 'react';
 import Head from 'next/head';
 import { motion, Variants } from 'framer-motion';
 import { useRouter } from 'next/navigation';
@@ -9,6 +9,12 @@ const RoofingServicesPage = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [isMounted, setIsMounted] = useState(false);
   const router = useRouter();
+  const featuresRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToFeatures = () => {
+    featuresRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
 
   useEffect(() => {
     setIsMounted(true);
@@ -340,7 +346,9 @@ const RoofingServicesPage = () => {
           </motion.p>
           
           <motion.div variants={fadeIn('up', 'tween', 0.5, 0.75)} className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+            <button 
+              onClick={scrollToFeatures}
+              className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
               Explore Features
             </button>
             <button 
@@ -353,7 +361,7 @@ const RoofingServicesPage = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4">
+      <section ref={featuresRef} className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial="hidden"

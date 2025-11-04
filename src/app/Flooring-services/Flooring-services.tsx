@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState,useRef } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 import { useRouter } from 'next/navigation';
@@ -8,6 +8,12 @@ import { useRouter } from 'next/navigation';
 const FlooringServicesPage = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const router = useRouter();
+  const featuresRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToFeatures = () => {
+    featuresRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
 
   const toggleFaq = (index: number) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -175,6 +181,7 @@ const FlooringServicesPage = () => {
               transition={{ delay: 0.7, duration: 0.8 }}
             >
               <motion.button
+                onClick={scrollToFeatures}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-lg font-semibold text-white shadow-lg"
@@ -206,7 +213,7 @@ const FlooringServicesPage = () => {
       </section>
 
       {/* Key Features Section */}
-      <section className="py-16 px-4 md:px-8 bg-gray-900">
+      <section  ref={featuresRef} className="py-16 px-4 md:px-8 bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <motion.div 
             className="text-center mb-16"

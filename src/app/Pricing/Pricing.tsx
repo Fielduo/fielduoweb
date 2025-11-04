@@ -2,13 +2,16 @@
 import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useRouter } from 'next/navigation';
+
 
 const PricingPage = () => {
   const [billingCycle, setBillingCycle] = useState('yearly');
   const [activeTab, setActiveTab] = useState('pricing');
   const [isVisible, setIsVisible] = useState(false);
   const [selectedCurrency, setSelectedCurrency] = useState('USD');
-  
+  const router = useRouter();
+
   useEffect(() => {
     // Initialize AOS
     AOS.init({
@@ -220,10 +223,14 @@ const PricingPage = () => {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <button 
+              onClick={() => router.push('/Contact')}
+              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
               Start Free Trial
             </button>
-            <button className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300">
+            <button 
+              onClick={() => router.push('/Contact')}
+              className="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300">
               Request a Demo
             </button>
           </div>
@@ -423,7 +430,9 @@ const PricingPage = () => {
                   ))}
                 </ul>
                 
-                <button className={`w-full py-4 rounded-xl font-bold transition-all duration-300 group-hover:scale-105 ${plan.popular ? 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg' : 'bg-gray-700 bg-opacity-50 backdrop-blur-sm hover:bg-gray-600'}`}>
+                <button 
+                  onClick={() => router.push('/Contact')}
+                  className={`w-full py-4 rounded-xl font-bold transition-all duration-300 group-hover:scale-105 ${plan.popular ? 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 shadow-lg' : 'bg-gray-700 bg-opacity-50 backdrop-blur-sm hover:bg-gray-600'}`}>
                   {plan.cta}
                 </button>
               </div>
@@ -623,13 +632,17 @@ const PricingPage = () => {
             Start your free 14-day trial today, no setup fees, cancel anytime!
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
-            <button className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center">
+            <button 
+              onClick={() => router.push('/Contact')}
+              className="group bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center">
               Start Free Trial
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414-1.414l4-4z" clipRule="evenodd" />
               </svg>
             </button>
-            <button className="group border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white font-bold py-4 px-10 rounded-full transition-all duration-300 flex items-center justify-center">
+            <button 
+              onClick={() => router.push('/Contact')}
+              className="group border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white font-bold py-4 px-10 rounded-full transition-all duration-300 flex items-center justify-center">
               Request a Demo
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />

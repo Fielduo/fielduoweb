@@ -279,13 +279,13 @@ const PaintingServices = () => {
           Watch Demo
         </motion.button>
         
-        <motion.button
+        {/* <motion.button
           whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
           whileTap={{ scale: 0.98 }}
           className="px-8 py-4 bg-transparent border-2 border-white/20 rounded-xl font-bold text-white hover:border-white/40 transition-all duration-300"
         >
           Explore Features
-        </motion.button>
+        </motion.button> */}
       </motion.div>
     </motion.div>
   </div>
