@@ -4,7 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const PricingPage = () => {
-  const [billingCycle, setBillingCycle] = useState('monthly');
+  const [billingCycle, setBillingCycle] = useState('yearly');
   const [activeTab, setActiveTab] = useState('pricing');
   const [isVisible, setIsVisible] = useState(false);
   const [selectedCurrency, setSelectedCurrency] = useState('USD');
@@ -28,7 +28,10 @@ const PricingPage = () => {
     { code: 'AED', symbol: 'د.إ', name: 'UAE Dirham' },
     { code: 'CHF', symbol: 'CHF', name: 'Swiss Franc' },
     { code: 'HKD', symbol: 'HK$', name: 'Hong Kong Dollar' },
-    { code: 'CAD', symbol: 'C$', name: 'Canadian Dollar' }
+    { code: 'CAD', symbol: 'C$', name: 'Canadian Dollar' },
+    { code: 'AUD', symbol: 'A$', name: 'Australian Dollar' },
+    { code: 'SGD', symbol: 'S$', name: 'Singapore Dollar' },
+    { code: 'NZD', symbol: 'NZ$', name: 'New Zealand Dollar' }
   ];
 
   const pricingTiers = [
@@ -41,7 +44,10 @@ const PricingPage = () => {
         AED: "د.إ83", 
         CHF: "CHF35", 
         HKD: "HK$202", 
-        CAD: "C$40" 
+        CAD: "C$40",
+        AUD: "A$49",
+        SGD: "S$28",
+        NZD: "NZ$52"
       },
       yearlyPrice: { 
         USD: "$30.00", 
@@ -50,7 +56,10 @@ const PricingPage = () => {
         AED: "د.إ69", 
         CHF: "CHF29", 
         HKD: "HK$168", 
-        CAD: "C$34" 
+        CAD: "C$34" ,
+        AUD: "A$41",
+        SGD: "S$24",
+        NZD: "NZ$43"
       },
       savings: "79% cheaper than Salesforce",
       description: "Perfect for Small Businesses (1-5 Technicians)",
@@ -78,7 +87,10 @@ const PricingPage = () => {
         AED: "د.إ167", 
         CHF: "CHF70", 
         HKD: "HK$404", 
-        CAD: "C$81" 
+        CAD: "C$81" ,
+        AUD: "A$99",
+        SGD: "S$57",
+        NZD: "NZ$105"
       },
       yearlyPrice: { 
         USD: "$60.00", 
@@ -87,7 +99,10 @@ const PricingPage = () => {
         AED: "د.إ139", 
         CHF: "CHF58", 
         HKD: "HK$336", 
-        CAD: "C$68" 
+        CAD: "C$68" ,
+        AUD: "A$82",
+        SGD: "S$48",
+        NZD: "NZ$87"
       },
       savings: "59% cheaper than Salesforce",
       description: "Perfect for 6-15 Technicians",
@@ -113,7 +128,10 @@ const PricingPage = () => {
         AED: "د.إ279", 
         CHF: "CHF116", 
         HKD: "HK$673", 
-        CAD: "C$136" 
+        CAD: "C$136" ,
+        AUD: "A$165",
+        SGD: "S$96",
+        NZD: "NZ$175"
       },
       yearlyPrice: { 
         USD: "$100.00", 
@@ -122,7 +140,10 @@ const PricingPage = () => {
         AED: "د.إ232", 
         CHF: "CHF97", 
         HKD: "HK$561", 
-        CAD: "C$113" 
+        CAD: "C$113",
+        AUD: "A$137",
+        SGD: "S$80",
+        NZD: "NZ$146"
       },
       savings: "31% cheaper than Salesforce",
       description: "Perfect for 16+ Technicians",
