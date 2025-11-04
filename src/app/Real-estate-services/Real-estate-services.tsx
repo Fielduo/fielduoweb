@@ -3,10 +3,12 @@
 // pages/real-estate-services.tsx
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 
 const RealEstateServices = () => {
   const [activeTab, setActiveTab] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -403,6 +405,7 @@ const RealEstateServices = () => {
               Explore Features
             </motion.button>
             <motion.button 
+              onClick={() => router.push('/Contact')} 
               className="px-8 py-3 bg-transparent hover:bg-white/10 text-white rounded-lg transition-all duration-300 border border-white/30"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -547,6 +550,7 @@ const RealEstateServices = () => {
                     See how Fielduo can transform your real estate services with a personalized demonstration tailored to your specific needs.
                   </p>
                   <motion.button 
+                    onClick={() => router.push('/Contact')} 
                     className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 w-full"
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
@@ -662,6 +666,7 @@ const RealEstateServices = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button 
+                onClick={() => router.push('/Contact')} 
                 className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -669,6 +674,7 @@ const RealEstateServices = () => {
                 Get Started Today
               </motion.button>
               <motion.button 
+                onClick={() => router.push('/Contact')} 
                 className="px-8 py-3 bg-transparent hover:bg-white/10 text-white rounded-lg transition-all duration-300 border border-white/30"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
