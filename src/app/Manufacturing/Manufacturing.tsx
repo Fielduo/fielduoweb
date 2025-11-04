@@ -2,6 +2,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/navigation';
 
 export default function ManufacturingEquipmentServiceManagement() {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -14,6 +15,7 @@ export default function ManufacturingEquipmentServiceManagement() {
   });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const sectionRef = useRef(null);
+  const router = useRouter();
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -321,10 +323,14 @@ export default function ManufacturingEquipmentServiceManagement() {
               </div>
               
               <div className="flex flex-col sm:flex-row justify-center gap-6">
-                <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
+                <button 
+                  onClick={() => router.push('/Contact')}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
                   Request a Demo
                 </button>
-                <button className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
+                <button 
+                  onClick={() => router.push('/Contact')}
+                  className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
                   Contact Sales
                 </button>
               </div>
@@ -471,10 +477,14 @@ export default function ManufacturingEquipmentServiceManagement() {
               Reduce downtime, enhance safety, and optimize equipment performance with our specialized manufacturing management platform.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
+              <button 
+                onClick={() => router.push('/Contact')}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
                 Request a Demo
               </button>
-              <button className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
+              <button 
+                onClick={() => router.push('/Contact')}
+                className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
                 Contact Sales
               </button>
             </div>

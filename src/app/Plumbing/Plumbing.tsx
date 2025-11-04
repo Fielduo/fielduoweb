@@ -2,6 +2,8 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/navigation';
+
 
 export default function PlumbingPage() {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -15,6 +17,8 @@ export default function PlumbingPage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [activeTab, setActiveTab] = useState('features');
   const sectionRef = useRef(null);
+  const router = useRouter();
+
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -272,12 +276,14 @@ export default function PlumbingPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row justify-center gap-6">
-                <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
+                <button 
+                  onClick={() => router.push('/Contact')}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
                   Schedule Demo
                 </button>
-                <button className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
+                {/* <button className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
                   Learn More
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
@@ -424,10 +430,14 @@ export default function PlumbingPage() {
               Join the growing community of plumbing professionals who trust Fielduo to streamline their operations and accelerate growth.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
+              <button 
+                onClick={() => router.push('/Contact')}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
                 Start Free Trial
               </button>
-              <button className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
+              <button 
+                onClick={() => router.push('/Contact')}
+                className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
                 Contact Sales
               </button>
             </div>

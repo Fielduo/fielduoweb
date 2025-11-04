@@ -15,21 +15,25 @@ export default function EarlyBirdPopup() {
   useEffect(() => {
     // Calculate time until November 1st
     const calculateTimeLeft = () => {
-      const now = new Date();
-      const novemberFirst = new Date(now.getFullYear(), 10, 1); // Month is 0-indexed (10 = November)
-      if (now > novemberFirst) {
-        novemberFirst.setFullYear(novemberFirst.getFullYear() + 1);
-      }
-      
-      const diffTime = novemberFirst.getTime() - now.getTime();
-      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-      const diffHours = Math.floor((diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const diffMinutes = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60));
-      
-      setDaysLeft(diffDays);
-      setHoursLeft(diffHours);
-      setMinutesLeft(diffMinutes);
-    };
+  const now = new Date();
+  const novemberEnd = new Date(now.getFullYear(), 10, 30, 23, 59, 59); // November 30, 23:59:59
+
+  const diffTime = novemberEnd.getTime() - now.getTime();
+
+  if (diffTime <= 0) {
+    // Offer expired — hide popup
+    setIsVisible(false);
+    return;
+  }
+
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  const diffHours = Math.floor((diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const diffMinutes = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60));
+
+  setDaysLeft(diffDays);
+  setHoursLeft(diffHours);
+  setMinutesLeft(diffMinutes);
+};
 
     calculateTimeLeft();
     

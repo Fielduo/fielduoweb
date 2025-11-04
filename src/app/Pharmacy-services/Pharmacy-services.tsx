@@ -3,10 +3,17 @@
 // pages/pharmacy-services.tsx
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 
 const PharmacyServices = () => {
   const [activeTab, setActiveTab] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const router = useRouter();
+  const featuresRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToFeatures = () => {
+    featuresRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -493,6 +500,7 @@ const PharmacyServices = () => {
             transition={{ duration: 1, delay: 0.5 }}
           >
             <motion.button 
+              onClick={scrollToFeatures}
               className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -500,6 +508,7 @@ const PharmacyServices = () => {
               Explore Features
             </motion.button>
             <motion.button 
+              onClick={() => router.push('/Contact')} 
               className="px-8 py-3 bg-transparent hover:bg-white/10 text-white rounded-lg transition-all duration-300 border border-white/30"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -511,7 +520,7 @@ const PharmacyServices = () => {
       </section>
       
       {/* Key Features Section */}
-      <section className="py-20 px-4 md:px-8">
+      <section ref={featuresRef} className="py-20 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <motion.div 
             className="text-center mb-16"
@@ -644,6 +653,7 @@ const PharmacyServices = () => {
                     See how Fielduo can transform your pharmacy services with a personalized demonstration tailored to your specific needs.
                   </p>
                   <motion.button 
+                    onClick={() => router.push('/Contact')} 
                     className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 w-full"
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
@@ -759,6 +769,7 @@ const PharmacyServices = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button 
+                onClick={() => router.push('/Contact')} 
                 className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -766,6 +777,7 @@ const PharmacyServices = () => {
                 Get Started Today
               </motion.button>
               <motion.button 
+                onClick={() => router.push('/Contact')} 
                 className="px-8 py-3 bg-transparent hover:bg-white/10 text-white rounded-lg transition-all duration-300 border border-white/30"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

@@ -2,6 +2,8 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/navigation';
+
 
 export default function ApplianceRepairPage() {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -15,6 +17,7 @@ export default function ApplianceRepairPage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [activeTab, setActiveTab] = useState('features');
   const sectionRef = useRef(null);
+  const router = useRouter();
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -297,10 +300,14 @@ export default function ApplianceRepairPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row justify-center gap-6">
-                <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
+                <button 
+                  onClick={() => router.push('/Contact')}
+                  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
                   Start Free Trial
                 </button>
-                <button className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
+                <button
+                  onClick={() => router.push('/Contact')} 
+                  className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
                   Schedule Demo
                 </button>
               </div>
@@ -492,10 +499,14 @@ export default function ApplianceRepairPage() {
               Join thousands of appliance repair professionals who have already optimized their operations with Fielduo.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
+              <button 
+                onClick={() => router.push('/Contact')}
+                className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
                 Get Started Today
               </button>
-              <button className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
+              <button 
+                onClick={() => router.push('/Contact')}
+                className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
                 Contact Sales
               </button>
             </div>

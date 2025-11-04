@@ -37,6 +37,63 @@ export default function AdminBlogs() {
   const [selectedTextSize, setSelectedTextSize] = useState('16px');
   const selectionRef = useRef<Range | null>(null);
 
+  // Convert Markdown to HTML - basic implementation
+  // Convert Markdown to HTML - enhanced implementation for better heading differentiation
+const convertMarkdownToHtml = (markdown: string) => {
+  if (!markdown) return '';
+  
+  let html = markdown;
+  
+  // Define a consistent mapping of heading styles with more dramatic size differences
+  const headingStyles = {
+    h1: 'font-size: 2.5em; font-weight: 500; margin: 0.67em 0; color: #000; line-height: 1.2;',
+    h2: 'font-size: 2em; font-weight: 400; margin: 0.83em 0; color: #000; line-height: 1.25;',
+    h3: 'font-size: 1.5em; font-weight: 200; margin: 1em 0; color: #000; line-height: 1.3;',
+    h4: 'font-size: 1.25em; font-weight: 200; margin: 1.33em 0; color: #000; line-height: 1.35;',
+    h5: 'font-size: 1.1em; font-weight: 200; margin: 1.5em 0; color: #000; line-height: 1.4;',
+    h6: 'font-size: 1em; font-weight: 200; margin: 1.67em 0; color: #000; line-height: 1.45;',
+  };
+  
+  // Handle headers with explicit styling (process in reverse order to avoid conflicts)
+  html = html.replace(/^#{6}\s+(.+)$/gm, `<h6 style="${headingStyles.h6}">$1</h6>`);
+  html = html.replace(/^#{5}\s+(.+)$/gm, `<h5 style="${headingStyles.h5}">$1</h5>`);
+  html = html.replace(/^#{4}\s+(.+)$/gm, `<h4 style="${headingStyles.h4}">$1</h4>`);
+  html = html.replace(/^#{3}\s+(.+)$/gm, `<h3 style="${headingStyles.h3}">$1</h3>`);
+  html = html.replace(/^#{2}\s+(.+)$/gm, `<h2 style="${headingStyles.h2}">$1</h2>`);
+  html = html.replace(/^#{1}\s+(.+)$/gm, `<h1 style="${headingStyles.h1}">$1</h1>`);
+  
+  // Handle bold
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/__(.+?)__/g, '<strong>$1</strong>');
+  
+  // Handle italic
+  html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+  html = html.replace(/_(.+?)_/g, '<em>$1</em>');
+  
+  // Handle lists
+  // Unordered lists
+  html = html.replace(/^\s*\*\s+(.+)$/gm, '<ul><li>$1</li></ul>');
+  html = html.replace(/^\s*-\s+(.+)$/gm, '<ul><li>$1</li></ul>');
+  
+  // Ordered lists
+  html = html.replace(/^\s*\d+\.\s+(.+)$/gm, '<ol><li>$1</li></ol>');
+  
+  // Fix adjacent list items
+  html = html.replace(/<\/ul>\s*<ul>/g, '');
+  html = html.replace(/<\/ol>\s*<ol>/g, '');
+  
+  // Handle horizontal rule
+  html = html.replace(/^---$/gm, '<hr />');
+  
+  // Preserve line breaks for better visualization
+  html = html.replace(/\n/g, '<br />');
+
+// Handle links with blue color
+html = html.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" style="color: #1d4ed8; text-decoration: underline;" target="_blank" rel="noopener noreferrer">$1</a>');
+  
+  return html;
+};
+
   const exec = (command: string, value?: string) => {
     if (typeof document !== 'undefined') {
       try {
@@ -48,7 +105,7 @@ export default function AdminBlogs() {
         
         // Execute the command
         const success = document.execCommand(command, false, value);
-        console.log(`📝 Executed ${command}${value ? ` with value: ${value}` : ''} - Success: ${success}`);
+        console.log(`Executed ${command}${value ? ` with value: ${value}` : ''} - Success: ${success}`);
         
         // Update form data after command execution
         if (contentEditor) {
@@ -59,61 +116,60 @@ export default function AdminBlogs() {
         
         return success;
       } catch (error) {
-        console.error(`❌ Error executing ${command}:`, error);
+        console.error(`Error executing ${command}:`, error);
         return false;
       }
     }
     return false;
   };
 
-  // Enhanced heading function for better compatibility
-  const applyHeading = (tagName: string) => {
-    const contentEditor = document.querySelector('[role="textbox"]') as HTMLDivElement;
-    if (!contentEditor) return;
+  const applyHeading = (tagName) => {
+  const contentEditor = document.querySelector('[role="textbox"]');
+  if (!contentEditor) return;
 
-    contentEditor.focus();
+  contentEditor.focus();
+  
+  const selection = window.getSelection();
+  if (selection && selection.rangeCount > 0) {
+    const range = selection.getRangeAt(0);
+    const selectedText = range.toString();
     
-    // Try formatBlock first
-    let success = exec('formatBlock', `<${tagName}>`);
+    // Define a consistent mapping of heading styles with more dramatic size differences
+    const headingStyles = {
+      h1: 'font-size: 2.5em; font-weight: 800; margin: 0.67em 0; color: #000; line-height: 1.2;',
+      h2: 'font-size: 2em; font-weight: 700; margin: 0.83em 0; color: #000; line-height: 1.25;',
+      h3: 'font-size: 1.5em; font-weight: 600; margin: 1em 0; color: #000; line-height: 1.3;',
+      h4: 'font-size: 1.25em; font-weight: 600; margin: 1.33em 0; color: #000; line-height: 1.35;',
+      h5: 'font-size: 1.1em; font-weight: 600; margin: 1.5em 0; color: #000; line-height: 1.4;',
+      h6: 'font-size: 1em; font-weight: 600; margin: 1.67em 0; color: #000; line-height: 1.45;',
+    };
     
-    // Fallback method if formatBlock doesn't work
-    if (!success) {
-      const selection = window.getSelection();
-      if (selection && selection.rangeCount > 0) {
-        const range = selection.getRangeAt(0);
-        const selectedText = range.toString();
-        
-        if (selectedText) {
-          // Wrap selected text in heading
-          const headingElement = document.createElement(tagName);
-          headingElement.textContent = selectedText;
-          
-          range.deleteContents();
-          range.insertNode(headingElement);
-          
-          // Update selection
-          range.selectNodeContents(headingElement);
-          selection.removeAllRanges();
-          selection.addRange(range);
-          
-          setFormData(prev => ({ ...prev, content: contentEditor.innerHTML }));
-          console.log(`✅ Applied ${tagName} using fallback method`);
-        } else {
-          // No text selected, create new heading
-          const headingElement = document.createElement(tagName);
-          headingElement.textContent = `${tagName.toUpperCase()} Heading`;
-          
-          range.insertNode(headingElement);
-          range.selectNodeContents(headingElement);
-          selection.removeAllRanges();
-          selection.addRange(range);
-          
-          setFormData(prev => ({ ...prev, content: contentEditor.innerHTML }));
-          console.log(`✅ Created new ${tagName} heading`);
-        }
-      }
+    if (selectedText) {
+      // Create new element with proper styling from our mapping
+      const headingElement = document.createElement('div');
+      headingElement.innerHTML = `<${tagName} style="${headingStyles[tagName]}">${selectedText}</${tagName}>`;
+      
+      range.deleteContents();
+      range.insertNode(headingElement);
+      
+      // Force update form data after a short delay
+      setTimeout(() => {
+        setFormData(prev => ({ ...prev, content: contentEditor.innerHTML }));
+      }, 50);
+    } else {
+      // No text selected, create placeholder heading
+      const headingElement = document.createElement('div');
+      headingElement.innerHTML = `<${tagName} style="${headingStyles[tagName]}">${tagName.toUpperCase()} Heading</${tagName}>`;
+      
+      range.insertNode(headingElement);
+      
+      // Force update form data
+      setTimeout(() => {
+        setFormData(prev => ({ ...prev, content: contentEditor.innerHTML }));
+      }, 50);
     }
-  };
+  }
+};
 
   // Enhanced text alignment function
   const applyTextAlignment = (alignment: 'left' | 'center' | 'right') => {
@@ -164,7 +220,7 @@ export default function AdminBlogs() {
             selection.addRange(range);
             
             setFormData(prev => ({ ...prev, content: contentEditor.innerHTML }));
-            console.log(`✅ Applied ${alignment} alignment using fallback method`);
+            console.log(`Applied ${alignment} alignment using fallback method`);
           } else {
             // No text selected, apply to current block element
             const currentNode = range.startContainer;
@@ -179,7 +235,7 @@ export default function AdminBlogs() {
             if (blockElement && blockElement instanceof HTMLElement) {
               blockElement.style.textAlign = alignment;
               setFormData(prev => ({ ...prev, content: contentEditor.innerHTML }));
-              console.log(`✅ Applied ${alignment} alignment to block element: ${blockElement.tagName}`);
+              console.log(`Applied ${alignment} alignment to block element: ${blockElement.tagName}`);
             }
           }
         } catch (error) {
@@ -190,7 +246,7 @@ export default function AdminBlogs() {
   };
 
   const testFormattingFunctions = () => {
-    console.log('🧪 Testing all formatting functions...');
+    console.log('Testing all formatting functions...');
     
     const tests = [
       { name: 'Bold', fn: () => exec('bold') },
@@ -209,10 +265,10 @@ export default function AdminBlogs() {
     tests.forEach(test => {
       console.log(`Testing ${test.name}...`);
       const result = test.fn();
-      console.log(`${test.name}: ${result === false ? '❌ Failed' : '✅ Working'}`);
+      console.log(`${test.name}: ${result === false ? 'Failed' : 'Working'}`);
     });
     
-    console.log('🧪 Formatting test complete');
+    console.log('Formatting test complete');
   };
 
   // Helper function to get current (or last saved) cursor position in contentEditable
@@ -271,7 +327,7 @@ export default function AdminBlogs() {
   const insertInlineImage = async (file: File, alignment: 'left' | 'center' | 'right' = 'center', size: 'small' | 'medium' | 'large' | 'full' = 'medium') => {
     setIsUploadingInlineImage(true);
     try {
-      console.log('🖼️ Starting image upload...', {
+      console.log('Starting image upload...', {
         fileName: file.name,
         fileSize: file.size,
         fileType: file.type,
@@ -293,23 +349,23 @@ export default function AdminBlogs() {
       const uploadFormData = new FormData();
       uploadFormData.append('file', file);
 
-      console.log('📤 Sending upload request to /api/upload...');
+      console.log('Sending upload request to /api/upload...');
       const response = await fetch('/api/upload', {
         method: 'POST',
         body: uploadFormData,
       });
 
-      console.log('📥 Upload response received:', {
+      console.log('Upload response received:', {
         status: response.status,
         statusText: response.statusText,
         ok: response.ok
       });
       
       const result = await response.json();
-      console.log('📄 Upload result:', result);
+      console.log('Upload result:', result);
       
       if (!response.ok) {
-        console.error('❌ Upload failed:', { status: response.status, result });
+        console.error('Upload failed:', { status: response.status, result });
         throw new Error(result.message || `Upload failed with status ${response.status}`);
       }
       
@@ -334,7 +390,7 @@ export default function AdminBlogs() {
                  loading="lazy" />
           </div><div><br></div>`;
         
-        console.log('🎨 Inserting centered image HTML...');
+        console.log('Inserting centered image HTML...');
         
         // Get the current editor
         const contentEditor = document.querySelector('[role="textbox"]') as HTMLDivElement;
@@ -350,19 +406,19 @@ export default function AdminBlogs() {
           // Ensure the editor is focused and update form data
           contentEditor.focus();
           setFormData(prev => ({ ...prev, content: contentEditor.innerHTML }));
-          console.log('📍 Image inserted at cursor position');
+          console.log('Image inserted at cursor position');
         }
         
-        alert(`✅ Image "${file.name}" uploaded successfully!`);
+        alert(`Image "${file.name}" uploaded successfully!`);
         return result.imageUrl;
       } else {
-        console.error('❌ Upload result indicates failure:', result);
+        console.error('Upload result indicates failure:', result);
         throw new Error(result.message || 'Upload succeeded but no image URL returned');
       }
     } catch (error) {
-      console.error('💥 Error uploading inline image:', error);
+      console.error('Error uploading inline image:', error);
       const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
-      alert(`❌ Failed to upload image: ${errorMessage}\n\nPlease check:\n1. File type (JPEG, PNG, GIF, WebP)\n2. File size (max 5MB)\n3. Internet connection\n4. Cloudinary configuration`);
+      alert(`Failed to upload image: ${errorMessage}\n\nPlease check:\n1. File type (JPEG, PNG, GIF, WebP)\n2. File size (max 5MB)\n3. Internet connection\n4. Cloudinary configuration`);
       return null;
     } finally {
       setIsUploadingInlineImage(false);
@@ -499,7 +555,7 @@ export default function AdminBlogs() {
         selection.addRange(range);
         
         setFormData(prev => ({ ...prev, content: contentEditor.innerHTML }));
-        console.log(`✅ Applied font size ${size} to selected text`);
+        console.log(`Applied font size ${size} to selected text`);
       } else {
         // No text selected, apply to current position
         const span = document.createElement('span');
@@ -512,12 +568,36 @@ export default function AdminBlogs() {
         selection.addRange(range);
         
         setFormData(prev => ({ ...prev, content: contentEditor.innerHTML }));
-        console.log(`✅ Applied font size ${size} at cursor position`);
+        console.log(`Applied font size ${size} at cursor position`);
       }
     }
   };
 
-  // Removed draggable image behavior per new requirements
+  // Handle pasting of plain text or markdown text
+  const handlePaste = (e: React.ClipboardEvent) => {
+    e.preventDefault();
+    
+    // Get clipboard content as plain text
+    const text = e.clipboardData.getData('text/plain');
+    
+    // Check if it looks like markdown (contains headings, etc.)
+    const hasMarkdown = text.match(/^#{1,6}\s+.+|(?:\*\*|__).*(?:\*\*|__)|(?:\*|_).*(?:\*|_)|\n-\s+.*|\n\d+\.\s+.*|\n---\n/m);
+    
+    if (hasMarkdown) {
+      // Convert markdown to HTML
+      const html = convertMarkdownToHtml(text);
+      
+      // Insert HTML at cursor position
+      const editor = document.querySelector('[role="textbox"]') as HTMLDivElement;
+      if (editor) {
+        document.execCommand('insertHTML', false, html);
+        setFormData(prev => ({ ...prev, content: editor.innerHTML }));
+      }
+    } else {
+      // Just insert as plain text
+      document.execCommand('insertText', false, text);
+    }
+  };
 
   const stripHtml = (html: string) => html.replace(/<[^>]*>/g, '');
 
@@ -542,7 +622,6 @@ export default function AdminBlogs() {
             container.style.clear = 'both';
           }
         });
-        // No drag behavior
       }
     };
 
@@ -570,7 +649,6 @@ export default function AdminBlogs() {
               container.style.clear = 'both';
             }
           });
-          // No drag behavior
         }
       };
 
@@ -748,20 +826,20 @@ export default function AdminBlogs() {
               type="button"
               onClick={async () => {
                 try {
-                  console.log('🧪 Testing Cloudinary configuration...');
+                  console.log('Testing Cloudinary configuration...');
                   const response = await fetch('/api/test-cloudinary');
                   const result = await response.json();
                   
                   if (result.success) {
-                    console.log('✅ Cloudinary test successful:', result);
-                    alert(`✅ Cloudinary Test Successful!\n\nCloud Name: ${result.config.cloudName}\nAPI Key: ${result.config.apiKey}\nConnection: ${result.config.connectionTest}\n\nUsage: ${result.usage.used_credits}/${result.usage.limit} credits used`);
+                    console.log('Cloudinary test successful:', result);
+                    alert(`Cloudinary Test Successful!\n\nCloud Name: ${result.config.cloudName}\nAPI Key: ${result.config.apiKey}\nConnection: ${result.config.connectionTest}\n\nUsage: ${result.usage.used_credits}/${result.usage.limit} credits used`);
                   } else {
-                    console.error('❌ Cloudinary test failed:', result);
-                    alert(`❌ Cloudinary Test Failed!\n\nError: ${result.message}\n\nConfiguration Status:\n- Cloud Name: ${result.config?.cloudName ? '✅' : '❌'}\n- API Key: ${result.config?.apiKey ? '✅' : '❌'}\n- API Secret: ${result.config?.apiSecret ? '✅' : '❌'}`);
+                    console.error('Cloudinary test failed:', result);
+                    alert(`Cloudinary Test Failed!\n\nError: ${result.message}\n\nConfiguration Status:\n- Cloud Name: ${result.config?.cloudName ? '✅' : '❌'}\n- API Key: ${result.config?.apiKey ? '✅' : '❌'}\n- API Secret: ${result.config?.apiSecret ? '✅' : '❌'}`);
                   }
                 } catch (error) {
-                  console.error('💥 Cloudinary test error:', error);
-                  alert(`💥 Cloudinary Test Error!\n\n${error instanceof Error ? error.message : 'Unknown error'}\n\nPlease check:\n1. Server is running\n2. Environment variables are set\n3. Network connection`);
+                  console.error('Cloudinary test error:', error);
+                  alert(`Cloudinary Test Error!\n\n${error instanceof Error ? error.message : 'Unknown error'}\n\nPlease check:\n1. Server is running\n2. Environment variables are set\n3. Network connection`);
                 }
               }}
               className="px-3 py-1 text-xs bg-blue-50 text-blue-600 rounded hover:bg-blue-100 border border-blue-200"
@@ -883,7 +961,7 @@ export default function AdminBlogs() {
                             span.style.color = e.target.value;
                             try {
                               range.surroundContents(span);
-                              console.log(`✅ Applied text color ${e.target.value} using fallback`);
+                              console.log(`Applied text color ${e.target.value} using fallback`);
                             } catch (err) {
                               console.log('Color application failed:', err);
                             }
@@ -909,7 +987,7 @@ export default function AdminBlogs() {
                             span.style.backgroundColor = e.target.value;
                             try {
                               range.surroundContents(span);
-                              console.log(`✅ Applied background color ${e.target.value} using fallback`);
+                              console.log(`Applied background color ${e.target.value} using fallback`);
                             } catch (err) {
                               console.log('Background color application failed:', err);
                             }
@@ -967,20 +1045,63 @@ export default function AdminBlogs() {
                     <div className="w-px h-6 bg-gray-300 mx-1"></div>
                     
                     {/* Link */}
-                    <button 
-                      type="button" 
-                      onMouseDown={(e) => e.preventDefault()} 
-                      onClick={() => {
-                        const url = prompt('Enter URL:');
-                        if (url) {
-                          exec('createLink', url);
-                        }
-                      }} 
-                      className="px-2 py-1 text-sm rounded hover:bg-gray-100" 
-                      title="Insert Link"
-                    >
-                      🔗 Link
-                    </button>
+<button 
+  type="button" 
+  onMouseDown={(e) => e.preventDefault()} 
+  onClick={() => {
+    // Save the current selection
+    const selection = window.getSelection();
+    if (!selection || selection.rangeCount === 0) {
+      alert('Please select some text first to create a link.');
+      return;
+    }
+    
+    const range = selection.getRangeAt(0);
+    const selectedText = range.toString();
+    
+    if (!selectedText.trim()) {
+      alert('Please select some text first to create a link.');
+      return;
+    }
+    
+    // Prompt for URL
+    const url = prompt('Enter URL:', 'https://');
+    if (!url || !url.trim()) return;
+    
+    // Format URL if needed
+    let formattedUrl = url.trim();
+    if (!formattedUrl.startsWith('http://') && 
+        !formattedUrl.startsWith('https://') && 
+        !formattedUrl.startsWith('mailto:') && 
+        !formattedUrl.startsWith('tel:')) {
+      formattedUrl = 'https://' + formattedUrl;
+    }
+    
+    // Create a new anchor element
+    const link = document.createElement('a');
+    link.href = formattedUrl;
+    link.target = '_blank'; // Open in new tab
+    link.rel = 'noopener noreferrer'; // Security best practice
+    link.style.color = '#1d4ed8';
+    link.textContent = selectedText;
+    
+    // Replace the selected content with the new link
+    range.deleteContents();
+    range.insertNode(link);
+    
+    // Update the form data
+    const contentEditor = document.querySelector('[role="textbox"]') as HTMLDivElement;
+    if (contentEditor) {
+      setTimeout(() => {
+        setFormData(prev => ({ ...prev, content: contentEditor.innerHTML }));
+      }, 50);
+    }
+  }} 
+  className="px-2 py-1 text-sm rounded hover:bg-gray-100" 
+  title="Insert Link"
+>
+  🔗 Link
+</button>
                     
                     {/* Image Upload */}
                     <label className="px-2 py-1 text-sm rounded cursor-pointer hover:bg-gray-100" title="Insert Image">
@@ -1002,49 +1123,8 @@ export default function AdminBlogs() {
                     >
                       🔧 Test Functions
                     </button>
+
                     
-                    {/* Test Format Button - for debugging */}
-                    <button 
-                      type="button" 
-                      onMouseDown={(e) => e.preventDefault()} 
-                      onClick={() => {
-                        const contentEditor = document.querySelector('[role="textbox"]') as HTMLDivElement;
-                        if (contentEditor) {
-                          const testContent = `
-                            <h1>Main Title (H1)</h1>
-                            <p>This is a normal paragraph with <strong>bold text</strong> and <em>italic text</em>.</p>
-                            <h2>Section Heading (H2)</h2>
-                            <p>Another paragraph with <u>underlined text</u>.</p>
-                            <h3>Subsection (H3)</h3>
-                            <ul>
-                              <li>Bullet point one</li>
-                              <li>Bullet point two</li>
-                            </ul>
-                            <h4>Sub-subsection (H4)</h4>
-                            <ol>
-                              <li>Numbered item one</li>
-                              <li>Numbered item two</li>
-                            </ol>
-                            <h5>Minor heading (H5)</h5>
-                            <div style="text-align: left;">Left aligned text example</div>
-                            <div style="text-align: center;">Centered text example</div>
-                            <div style="text-align: right;">Right aligned text example</div>
-                            <h6>Smallest heading (H6)</h6>
-                            <p style="color: blue;">Blue colored text</p>
-                            <p style="background-color: yellow;">Highlighted text</p>
-                            <br>`;
-                          
-                          console.log('🧪 Inserting test formatted content...');
-                          contentEditor.innerHTML = testContent;
-                          setFormData(prev => ({ ...prev, content: contentEditor.innerHTML }));
-                          console.log('🧪 Test content inserted with all formats');
-                        }
-                      }} 
-                      className="px-2 py-1 text-xs bg-green-50 text-green-600 rounded hover:bg-green-100" 
-                      title="Insert Test Formatted Content"
-                    >
-                      🧪 Test All
-                    </button>
                     
                     <div className="w-px h-6 bg-gray-300 mx-1"></div>
                     
@@ -1058,7 +1138,7 @@ export default function AdminBlogs() {
                   </div>
                 </div>
                 
-                {/* Simple Text Editor with Centered Images */}
+                {/* Enhanced Text Editor with Markdown Support */}
                 <div
                   role="textbox"
                   contentEditable
@@ -1100,6 +1180,8 @@ export default function AdminBlogs() {
                         container.style.clear = 'both';
                       }
                     });
+                    
+                    // Update form data
                     setFormData({ ...formData, content: target.innerHTML });
                   }}
                   onMouseUp={() => {
@@ -1123,12 +1205,7 @@ export default function AdminBlogs() {
                       e.preventDefault(); // Prevent some RTL shortcuts
                     }
                   }}
-                  onPaste={(e) => {
-                    // Handle paste events normally
-                    e.preventDefault();
-                    const text = e.clipboardData.getData('text/plain');
-                    document.execCommand('insertText', false, text);
-                  }}
+                  onPaste={handlePaste}
                   ref={(el) => {
                     if (el && formData.content) {
                       // Set content directly if different
@@ -1157,7 +1234,7 @@ export default function AdminBlogs() {
               </div>
               
               <p className="mt-1 text-xs text-gray-500">
-                Use the toolbar to format your content: Select text format from dropdown (H1-H6, Normal), apply bold/italic/underline, align text, change colors, adjust text size, create lists, add links and images. Use H1 for main titles, H2 for sections, H3 for subsections. Select a position in the text and upload an image — it will be inserted right there.
+                Use the toolbar to format your content or paste Markdown text directly. When pasting Markdown, click the "Process Markdown" button to convert formatting. Use H1 for main titles, H2 for sections, H3 for subsections. Select text to apply formats.
               </p>
             </div>
             
@@ -1369,4 +1446,3 @@ export default function AdminBlogs() {
     </div>
   );
 }
-

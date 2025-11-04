@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { motion, Variants } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 const SolarRenewablePage = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [isMounted, setIsMounted] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setIsMounted(true);
@@ -356,6 +358,7 @@ const SolarRenewablePage = () => {
             className="flex flex-wrap justify-center gap-4"
           >
             <motion.button
+              onClick={() => router.push('/Contact')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-yellow-600 to-amber-500 hover:from-yellow-700 hover:to-amber-600 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-lg shadow-yellow-500/20"
@@ -514,6 +517,7 @@ const SolarRenewablePage = () => {
           >
             <h3 className="text-2xl font-bold mb-6">Schedule a Demo</h3>
             <motion.button
+              onClick={() => router.push('/Contact')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-yellow-600 to-amber-500 hover:from-yellow-700 hover:to-amber-600 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-lg shadow-yellow-500/20"
@@ -689,6 +693,7 @@ const SolarRenewablePage = () => {
             className="flex flex-wrap justify-center gap-4"
           >
             <motion.button
+              onClick={() => router.push('/Contact')}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-yellow-600 to-amber-500 hover:from-yellow-700 hover:to-amber-600 text-white font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-lg shadow-yellow-500/20"

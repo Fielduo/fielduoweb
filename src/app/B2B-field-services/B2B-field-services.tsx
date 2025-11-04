@@ -2,11 +2,14 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/navigation';
+
 
 export default function B2BFieldServices() {
   const [activeFaq, setActiveFaq] = useState(null);
   const [hoveredTier, setHoveredTier] = useState(null);
   const [hoveredStep, setHoveredStep] = useState(null);
+  const router = useRouter();
 
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -265,10 +268,14 @@ export default function B2BFieldServices() {
               </div>
               
               <div className="flex flex-col sm:flex-row justify-center gap-6">
-                <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
+                <button 
+                  onClick={() => router.push('/Contact')}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
                   Schedule Implementation Consultation
                 </button>
-                <button className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
+                <button 
+                  onClick={() => router.push('/Contact')}
+                  className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
                   Download Implementation Guide
                 </button>
               </div>
@@ -540,10 +547,14 @@ export default function B2BFieldServices() {
               Our implementation specialists are ready to discuss your specific requirements and create a customized deployment plan.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
+              <button 
+                onClick={() => router.push('/Contact')}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
                 Schedule Discovery Call
               </button>
-              <button className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
+              <button
+                onClick={() => router.push('/Contact')}
+                className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
                 Contact Implementation Team
               </button>
             </div>

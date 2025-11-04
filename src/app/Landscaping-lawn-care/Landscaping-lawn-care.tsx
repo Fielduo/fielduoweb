@@ -2,6 +2,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/navigation';
 
 export default function LandscapingPage() {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -14,6 +15,8 @@ export default function LandscapingPage() {
   });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const sectionRef = useRef(null);
+  const router = useRouter();
+
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -278,12 +281,14 @@ export default function LandscapingPage() {
               </p>
               
               <div className="flex flex-col sm:flex-row justify-center gap-6">
-                <button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-green-500/20">
+                <button 
+                  onClick={() => router.push('/Contact')}
+                  className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-green-500/20">
                   Get Started Today
                 </button>
-                <button className="bg-transparent border-2 border-green-500 text-green-400 hover:bg-green-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
+                {/* <button className="bg-transparent border-2 border-green-500 text-green-400 hover:bg-green-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
                   Learn More
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
@@ -354,10 +359,14 @@ export default function LandscapingPage() {
               Join thousands of landscaping professionals who have streamlined their operations, improved customer satisfaction, and grown their business with Fielduo.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-green-500/20">
+              <button 
+                onClick={() => router.push('/Contact')}
+                className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-green-500/20">
                 Start Your Free Trial
               </button>
-              <button className="bg-transparent border-2 border-green-500 text-green-400 hover:bg-green-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
+              <button 
+                onClick={() => router.push('/Contact')}
+                className="bg-transparent border-2 border-green-500 text-green-400 hover:bg-green-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
                 Request a Demo
               </button>
             </div>
@@ -445,10 +454,14 @@ export default function LandscapingPage() {
               Join thousands of landscaping professionals who trust Fielduo to streamline their operations and accelerate growth.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-green-500/20">
+              <button 
+                onClick={() => router.push('/Contact')}
+                className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-green-500/20">
                 Start Free Trial
               </button>
-              <button className="bg-transparent border-2 border-green-500 text-green-400 hover:bg-green-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
+              <button 
+                onClick={() => router.push('/Contact')}
+                className="bg-transparent border-2 border-green-500 text-green-400 hover:bg-green-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
                 Contact Sales
               </button>
             </div>

@@ -210,15 +210,15 @@ export default function Home() {
           
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight px-2" data-aos="fade-up" data-aos-delay="300">
             <span className="block mb-2 md:mb-3 text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-400">
-              AI-Powered Field Operations
+              Streamline Field Service
             </span>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 animate-gradient">
-              That Actually Work
+              Maximize Revenue
             </span>
           </h1>
           
           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl sm:max-w-3xl mx-auto mb-6 md:mb-8 px-4" data-aos="fade-up" data-aos-delay="400">
-            All-in-one platform for scheduling, dispatching, invoicing, and customer management
+            Fielduo helps field service teams schedule smarter, dispatch faster, and increase revenue—without the operational headaches.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 md:mb-12 px-4" data-aos="fade-up" data-aos-delay="500">

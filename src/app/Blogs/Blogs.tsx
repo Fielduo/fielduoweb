@@ -65,7 +65,7 @@ const BlogPage = () => {
             className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
             data-aos="fade-down"
           >
-            Fielduo Blog
+            Fielduo Resources
           </h1>
           <p 
             className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto"
