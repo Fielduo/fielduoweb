@@ -2,6 +2,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/navigation';
 
 export default function ElevatorMaintenance() {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -14,6 +15,7 @@ export default function ElevatorMaintenance() {
   });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const sectionRef = useRef(null);
+  const router = useRouter();
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -273,10 +275,14 @@ export default function ElevatorMaintenance() {
               </p>
               
               <div className="flex flex-col sm:flex-row justify-center gap-6">
-                <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
+                <button 
+                  onClick={() => router.push('/Contact')}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
                   Watch Demo
                 </button>
-                <button className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
+                <button 
+                  onClick={() => router.push('/Contact')}
+                  className="bg-transparent border-2 border-blue-500 text-blue-400 hover:bg-blue-900/50 font-bold py-4 px-10 rounded-xl transition duration-300">
                   Request Consultation
                 </button>
               </div>
@@ -368,7 +374,9 @@ export default function ElevatorMaintenance() {
                 </div>
                 
                 <div className="mt-12 text-center">
-                  <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
+                  <button 
+                    onClick={() => router.push('/Contact')}
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
                     Schedule Your Demo
                   </button>
                 </div>
@@ -456,7 +464,9 @@ export default function ElevatorMaintenance() {
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
               Transform your elevator maintenance operations with Fielduo's specialized solution
             </p>
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
+            <button 
+              onClick={() => router.push('/Contact')}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-xl transition duration-300 transform hover:scale-105 shadow-xl shadow-blue-500/20">
               Request Demo
             </button>
           </div>
