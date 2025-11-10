@@ -109,7 +109,7 @@ export default function EarlyBirdPopup() {
             
             {/* Discount Badge */}
             <div className="mx-auto mb-4 sm:mb-6 inline-flex items-center rounded-full bg-gradient-to-r from-purple-100 to-indigo-100 px-4 py-2 shadow-md">
-              <span className="text-lg sm:text-xl font-bold text-purple-800">30% OFF</span>
+              <span className="text-lg sm:text-xl font-bold text-purple-800">25% OFF</span>
             </div>
 
             <p className="mb-4 text-sm sm:text-base text-gray-600">
