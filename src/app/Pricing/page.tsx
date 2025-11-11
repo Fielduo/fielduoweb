@@ -19,7 +19,7 @@ function PricingPage() {
           content="Compare Fielduo's plans and choose the best solution for your field service business. Start managing jobs, invoices, and teams efficiently today."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://fielduo.com/pricing" />
+        <meta property="og:url" content="https://fielduo.com/Pricing" />
         <meta property="og:site_name" content="Fielduo" />
       </Head>
       <Navbar />
