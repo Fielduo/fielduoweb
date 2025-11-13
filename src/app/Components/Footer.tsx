@@ -15,10 +15,10 @@ const Footer = () => {
               </span>
             </Link>
             <p className="text-gray-400 mb-6 max-w-md">
-              Delivering innovative field service solutions with trust and excellence. 
+              Delivering innovative field service solutions with trust and excellence.
               We turn your vision into reality with creativity and professionalism.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mb-8">
               <a href="https://x.com/fielduo82492" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors duration-300">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
@@ -45,6 +45,41 @@ const Footer = () => {
                 </svg>
               </a>
             </div>
+            {/* Industries*/}
+            <div>
+              <h4 className="text-lg font-semibold mb-4 text-white">Industries</h4>
+              <div className="grid grid-cols-2 gap-x-4">
+                <div>
+                  <ul className="space-y-2">
+                    <li><a href="/Hvac" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Hvac</a></li>
+                    <li><a href="/Plumbing" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Plumbing</a></li>
+                    <li><a href="/Electrical" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Electrical</a></li>
+                    <li><a href="/Pest-control" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Pest Control</a></li>
+                    <li><a href="/Aviation-Aircraft-Maintenance" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Aircraft Maintenance</a></li>
+                    <li><a href="/Roofing-services" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Roofing</a></li>
+                    <li><a href="/Landscaping-lawn-care" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Landscaping & Lawn-care</a></li>
+                    <li><a href="/Elevator-maintenance" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Elevator Maintenance</a></li>
+                    <li><a href="/Pool-service" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Pool Service</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <ul className="space-y-2">
+                    <li><a href="/Construction" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Construction</a></li>
+                    <li><a href="/Restoration-services" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Restoration Services</a></li>
+                    <li><a href="/Event-services" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Event Services</a></li>
+                    <li><a href="/Marine-Yacht-Services" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Marine & Yacht Services</a></li>
+                    <li><a href="/Mining-Equipment-Services" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Mining Equipment Services</a></li>
+                    <li><a href="/Home-security" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Home Security</a></li>
+                    <li><a href="/Internet-service-providers" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Internet Services Providers</a></li>
+                    <li><a href="/Oil-gas" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Oil & Gas</a></li>
+                    <li><a href="/Medical-device-services" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Medical Device Services</a></li>
+                  </ul>
+                </div>
+              </div>
+              <a href="/Industries" className="text-gray-400 hover:text-blue-300 transition-colors duration-300 mt-3 inline-block font-medium">
+                More...
+              </a>
+            </div>
           </div>
 
           {/* Products */}
@@ -56,6 +91,7 @@ const Footer = () => {
               <li><a href="/Advanced-intelligence" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Advanced Intelligence</a></li>
               <li><a href="/Mobile-app-features" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Mobile App</a></li>
               <li><a href="/Measurable-results" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Measurable Results</a></li>
+              <li><a href="/Implementation-support" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Implementation Support</a></li>
             </ul>
           </div>
 
@@ -63,18 +99,19 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6 text-white">Solutions</h4>
             <ul className="space-y-3 mb-8">
+              <li><a href="/Asset-Equipment-Management" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Asset & Equipment Management</a></li>
+              <li><a href="/Workforce-Management" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Workforce Management</a></li>
+              <li><a href="/Compliance-Safety" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Compliance & Safety</a></li>
+              <li><a href="/Customer-Experience" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Customer Experience</a></li>
+              <li><a href="/Business-Operations" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Business Operations</a></li>
+              <li><a href="/Technology-Integration" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Technology Integration</a></li>
+              <li><a href="/Specialized-Use-Cases" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Specialized Use Cases</a></li>
               <li><a href="/B2B-field-services" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">B2B Field Service</a></li>
               <li><a href="/B2C-Self-Service-Portal" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">B2C Self-Service</a></li>
-              <li><a href="/Scheduling-Dispatching" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Scheduling</a></li>
+              <li><a href="/Scheduling-Dispatching" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Scheduling & Dispatching</a></li>
               <li><a href="/Invoicing-Payments" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Invoicing & Payments</a></li>
             </ul>
-            
-            <h4 className="text-lg font-semibold mb-6 text-white">Industries</h4>
-            <ul className="space-y-3">
-              <li><a href="/Hvac" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">HVAC</a></li>
-              <li><a href="/Plumbing" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Plumbing</a></li>
-              <li><a href="/Electrical" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Electrical</a></li>
-            </ul>
+
           </div>
 
           {/* Company & Contact */}
@@ -86,7 +123,7 @@ const Footer = () => {
               <li><a href="/Pricing" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Pricing</a></li>
               <li><a href="/Contact" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 block py-1">Contact</a></li>
             </ul>
-            
+
             <h4 className="text-lg font-semibold mb-6 text-white">Get in Touch</h4>
             <ul className="space-y-4">
               <li className="flex items-start">
@@ -96,7 +133,7 @@ const Footer = () => {
                 </svg>
                 <span className="text-gray-400 text-sm">2261 Market Street STE 86773<br />San Francisco, CA 94114</span>
               </li>
-              
+
               {/* Sales Contact */}
               <li className="flex items-start">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-400 mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -106,11 +143,12 @@ const Footer = () => {
                   <span className="text-gray-400 text-sm font-medium">Sales:</span>
                   <div className="text-gray-400 text-sm">
                     US: +1 (415) 915 7065<br />
-                    IND: +91 962 962 7092
+                    IND: +91 962 962 7092<br />
+                    sales@fielduo.com
                   </div>
                 </div>
               </li>
-              
+
               {/* Support Contact */}
               <li className="flex items-start">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-400 mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -119,11 +157,12 @@ const Footer = () => {
                 <div>
                   <span className="text-gray-400 text-sm font-medium">Support:</span>
                   <div className="text-gray-400 text-sm">
-                    +1 (415) 200 5240
+                    +1 (415) 200 5240<br />
+                    support@fielduo.com
                   </div>
                 </div>
               </li>
-              
+
               <li className="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-400 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
