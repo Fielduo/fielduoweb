@@ -203,7 +203,7 @@ const CompetitorComparison = () => {
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
-              <p className="text-gray-300">Superior value with no hidden costs or feature restrictions</p>
+              <p className="text-gray-300">Transparent pricing with no hidden fees or complicated add-ons</p>
             </div>
             
             <div className="flex items-start p-4 bg-gray-900 bg-opacity-50 rounded-xl hover:bg-gray-800 transition-all duration-300 group" data-aos="fade-left" data-aos-delay="400">
@@ -212,7 +212,7 @@ const CompetitorComparison = () => {
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
-              <p className="text-gray-300">Advanced AI features that are actually easy to use</p>
+              <p className="text-gray-300">AI-powered tools designed for real-world field teams, not tech experts</p>
             </div>
             
             <div className="flex items-start p-4 bg-gray-900 bg-opacity-50 rounded-xl hover:bg-gray-800 transition-all duration-300 group" data-aos="fade-right" data-aos-delay="450">
@@ -221,7 +221,7 @@ const CompetitorComparison = () => {
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
-              <p className="text-gray-300">Complete feature set with no need for expensive add-ons</p>
+              <p className="text-gray-300">All essential FSM features included without expensive upgrades</p>
             </div>
             
             <div className="flex items-start p-4 bg-gray-900 bg-opacity-50 rounded-xl hover:bg-gray-800 transition-all duration-300 group" data-aos="fade-left" data-aos-delay="500">
@@ -230,7 +230,7 @@ const CompetitorComparison = () => {
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
-              <p className="text-gray-300">Reliable offline functionality that just works</p>
+              <p className="text-gray-300">Offline-first performance that keeps your team working anywhere</p>
             </div>
           </div>
         </div>
