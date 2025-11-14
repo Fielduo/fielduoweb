@@ -107,94 +107,94 @@ export default function ManufacturingEquipmentServiceManagement() {
   const features = [
     {
       title: "Predictive Maintenance",
-      description: "IoT-enabled equipment monitoring with predictive analytics to prevent failures before they occur",
+      description: "IoT-powered monitoring with AI to prevent equipment failures.",
       icon: "🔮",
-      detail: "AI-powered failure prediction with real-time monitoring and automated maintenance scheduling"
+      detail: "Track equipment health in real time with IoT sensors and AI analytics. Detect issues early, prevent breakdowns, and automate maintenance for better efficiency and uptime."
     },
     {
       title: "Asset Management",
-      description: "Comprehensive industrial equipment tracking with full lifecycle documentation and history",
+      description: "Track and manage your equipment throughout its entire lifecycle.",
       icon: "🏭",
-      detail: "Complete asset lifecycle management from installation to decommissioning"
+      detail: "Monitor every asset from installation to decommissioning with detailed records and real-time updates. Maintain a complete history of performance and maintenance to reduce costs, improve decisions, and extend equipment life."
     },
     {
       title: "Safety & Compliance",
-      description: "Digital safety procedures, compliance tracking, and audit-ready documentation",
+      description: "Simplify safety management and stay audit-ready with digital tools.",
       icon: "🛡️",
-      detail: "Automated compliance workflows with digital safety protocols and audit trails"
+      detail: "Implement digital safety procedures and track compliance effortlessly. Our system automates workflows, maintains complete audit trails, and ensures your operations meet safety and regulatory standards at all times."
     },
     {
       title: "Emergency Response",
-      description: "Rapid dispatch protocols for critical equipment failures with priority escalation",
+      description: "Respond faster when every second counts.",
       icon: "🚨",
-      detail: "Priority response system with SLA monitoring and escalation workflows"
+      detail: "Get instant alerts for breakdowns and auto-dispatch technicians to fix critical issues. Escalation rules and SLA tracking ensure no downtime goes unaddressed."
     },
     {
       title: "Inventory Management",
-      description: "Industrial spare parts inventory tracking with automated procurement alerts",
+      description: "Simplify inventory management with real-time monitoring, barcode scanning, and automated restocking alerts.",
       icon: "📦",
-      detail: "Optimized inventory levels with barcode scanning and automated reordering"
+      detail: "Monitor stock levels, automate reorders, and track spare parts with barcode scanning. Avoid production delays with predictive inventory alerts."
     },
     {
       title: "Performance Analytics",
-      description: "Equipment performance monitoring with actionable insights for optimization",
+      description: "Analyze equipment performance with real-time data and identify opportunities for improvement.",
       icon: "📊",
-      detail: "Advanced analytics with KPI tracking and performance benchmarking"
+      detail: "Monitor your equipment in real time and turn performance data into actionable insights. Identify inefficiencies, track KPIs, and optimize operations for better productivity."
     },
     {
       title: "Preventive Maintenance",
-      description: "Scheduled maintenance programs with automated work order generation",
+      description: "Automatically schedule maintenance based on equipment usage and manufacturer recommendations to prevent downtime.",
       icon: "🔧",
-      detail: "Automated PM scheduling based on equipment usage and manufacturer recommendations"
+      detail: "Set up preventive maintenance programs that generate work orders automatically. Track equipment usage, follow manufacturer guidelines, and ensure timely maintenance to keep your assets running efficiently and extend their lifespan."
     },
     {
       title: "IoT Integration",
-      description: "Seamless connectivity with industrial IoT devices and monitoring systems",
+      description: "Seamlessly connect your equipment to industrial IoT devices for real-time monitoring.",
       icon: "📡",
-      detail: "Real-time data integration with industrial IoT sensors and monitoring equipment"
+      detail: "Connect your industrial IoT devices and monitoring systems for real-time performance data and actionable insights."
     },
     {
       title: "Equipment Configuration",
-      description: "Centralized management of equipment specifications and service requirements",
+      description: "Manage all equipment specifications and service requirements from a single platform.",
       icon: "⚙️",
-      detail: "Comprehensive equipment database with specifications and service requirements"
+      detail: "Maintain a comprehensive database of equipment specifications and service requirements for efficient management and easy access"
     }
   ];
 
   const advantages = [
     {
       title: "Minimize Production Downtime",
-      description: "Predictive maintenance and rapid emergency response reduce equipment failures and maximize production uptime.",
+      description: "Keep your production lines running without interruption.Fielduo’s predictive maintenance and automated response workflows prevent breakdowns before they happen, helping you maintain consistent throughput and uptime.",
       icon: "⏱️",
       color: "from-green-500 to-teal-500"
     },
     {
       title: "Enhance Workplace Safety",
-      description: "Digital safety protocols and compliance tracking create safer work environments and reduce incidents.",
+      description: "Protect your people and your operations.With built-in digital safety checks, inspection logs, and compliance alerts, Fielduo helps manufacturers eliminate hazards and maintain a zero-incident environment.",
       icon: "👷",
       color: "from-blue-500 to-indigo-500"
     },
     {
       title: "Optimize Equipment Performance",
-      description: "Data-driven maintenance strategies and performance analytics extend equipment lifespan and efficiency.",
+      description: "Get more performance from every machine.Real-time analytics and maintenance tracking reveal how each asset performs — helping you fine-tune operations, extend equipment life, and reduce energy waste.",
       icon: "📈",
       color: "from-purple-500 to-pink-500"
     },
     {
       title: "Reduce Operational Costs",
-      description: "Efficient resource allocation, inventory optimization, and preventive maintenance lower total cost of ownership.",
+      description: "Spend smarter, not more.Fielduo automates inventory control, schedules preventive tasks, and optimizes technician deployment — minimizing unexpected repairs and reducing total operational expenses",
       icon: "💰",
       color: "from-yellow-500 to-orange-500"
     },
     {
       title: "Ensure Regulatory Compliance",
-      description: "Automated compliance tracking and audit-ready documentation minimize regulatory risks.",
+      description: "Reduce regulatory risks by automatically tracking compliance requirements and keeping detailed, audit-ready records. Ensure your operations meet all standards efficiently and consistently.",
       icon: "✅",
       color: "from-red-500 to-orange-500"
     },
     {
       title: "Improve Decision Making",
-      description: "Comprehensive analytics provide actionable insights for continuous operational improvement.",
+      description: "Make smarter, faster decisions using insights from detailed analytics and performance tracking.",
       icon: "🧠",
       color: "from-cyan-500 to-blue-500"
     }
@@ -298,10 +298,10 @@ export default function ManufacturingEquipmentServiceManagement() {
                 <span className="text-blue-400 font-medium">Industrial Excellence</span>
               </div>
               <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight">
-                Manufacturing Equipment <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Service Management</span>
+                Manufacturing Equipment <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Service Management Software</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-                Optimize manufacturing equipment maintenance, reduce downtime, and enhance operational efficiency with our specialized industrial management platform.
+                Streamline production efficiency, reduce equipment downtime, and boost plant performance with Fielduo’s intelligent field service management solution for manufacturers.
               </p>
               
               {/* Stats Display */}
@@ -344,7 +344,7 @@ export default function ManufacturingEquipmentServiceManagement() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Comprehensive Manufacturing Service Solutions</h2>
               <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                Enterprise-grade tools designed specifically for industrial equipment management and maintenance
+                Empower your factory operations with a modern, data-driven service management software built for manufacturers.
               </p>
             </div>
             
@@ -374,7 +374,7 @@ export default function ManufacturingEquipmentServiceManagement() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Strategic Manufacturing Advantages</h2>
               <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                Drive operational excellence with measurable business outcomes
+                Achieve higher efficiency, lower costs, and stronger compliance — all powered by Fielduo’s intelligent manufacturing service management platform.
               </p>
             </div>
             
@@ -398,7 +398,7 @@ export default function ManufacturingEquipmentServiceManagement() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Trusted by Manufacturing Leaders</h2>
               <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                Hear from industry leaders who have transformed their operations with Fielduo
+                Leading manufacturers share their experiences of boosting efficiency and reducing downtime with Fielduo.
               </p>
             </div>
             
