@@ -78,7 +78,7 @@ const ContactPage = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ type: 'spring', stiffness: 100, delay: 0.2 }}
                 >
-                    We're here to help and answer any question you might have. We look forward to hearing from you and discussing your next project.
+                    We’re here to help! Discover how Fielduo’s customer portal service can boost customer satisfaction and streamline support.
                 </motion.p>
             </div>
         </div>
@@ -99,7 +99,7 @@ const ContactPage = () => {
             >
                 <h2 className="text-3xl font-bold text-gray-100 mb-6">Contact Information</h2>
                 <p className="text-gray-400 mb-8">
-                    Reach out to us through any of the following channels. Our team is ready to assist you with all your industrial solution needs.
+                    We’re just a message away! Connect with us to streamline your service operations and discover how Fielduo transforms field service efficiency.
                 </p>
                 <div className="space-y-8">
                     {contactDetails.map((detail, index) => (

@@ -44,7 +44,7 @@ const AboutFielduo = () => {
             data-aos="fade-down"
             data-aos-delay="100"
           >
-            Revolutionizing field service management with innovative technology
+            Field service made smarter, faster, and easier with our Field Service Management Application.
           </p>
           <div 
             className="mt-10 animate-bounce"
@@ -67,9 +67,9 @@ const AboutFielduo = () => {
                 <div className="inline-block mb-4">
                   <span className="text-xs font-semibold px-3 py-1 bg-blue-900 text-blue-200 rounded-full">WHO WE ARE</span>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Empowering Field Service Excellence</h2>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Empowering Businesses By Field Service Management</h2>
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  At Fielduo, we empower businesses with seamless field-service management and real-time operational insights. Founded in 2025 in USA by Hari (CEO) and Kiruthiga (CTO), our startup brings together passionate technologists and industry experts dedicated to transforming field operations.
+                  At Fielduo, we empower businesses with seamless operations by our Field Service Management Application and real-time operational insights. Founded in 2025 in the USA by Hari (CEO) and Kiruthiga (CTO), our startup brings together passionate technologists and industry experts committed to transforming field operations and helping businesses deliver smarter, more efficient service.
                 </p>
               </div>
               
@@ -129,7 +129,7 @@ const AboutFielduo = () => {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-down" data-aos-delay="100">What Sets Us Apart</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto" data-aos="fade-down" data-aos-delay="200">
-              Discover the unique advantages that make Fielduo the preferred choice for field service management
+              Discover the unique advantages that make Fielduo the preferred choice for businesses seeking reliable Field Service Management Software.
             </p>
           </div>
           
@@ -139,7 +139,7 @@ const AboutFielduo = () => {
               <div className="text-4xl mb-6">📱</div>
               <h3 className="text-2xl font-bold mb-4">User-Centric Design</h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Every feature is crafted for field technicians—minimizing taps, supporting offline use, and delivering clear task guidance.
+                Every feature of our Field Service App is designed for field technicians—reducing taps, supporting offline use, and providing clear, actionable task guidance.
               </p>
               <button className="group flex items-center text-blue-400 hover:text-blue-300 font-medium">
                 Learn more
@@ -154,7 +154,7 @@ const AboutFielduo = () => {
               <div className="text-4xl mb-6">📊</div>
               <h3 className="text-2xl font-bold mb-4">Actionable Analytics</h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Real-time dashboards highlight job progress, resource utilization, and customer satisfaction, empowering managers to make data-driven decisions instantly.
+                Real-time dashboards in our Field Workforce Management Software highlight job progress, resource utilization, and customer satisfaction, empowering managers to make data-driven decisions instantly.
               </p>
               <button className="group flex items-center text-blue-400 hover:text-blue-300 font-medium">
                 Learn more
@@ -169,7 +169,7 @@ const AboutFielduo = () => {
               <div className="text-4xl mb-6">🔗</div>
               <h3 className="text-2xl font-bold mb-4">Easy Integration</h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Our lightweight API and pre-built connectors to popular ERP and CRM platforms mean rapid deployment with minimal IT overhead.
+                Our lightweight API and pre-built connectors in our Service Management Software enable rapid deployment and seamless integration with ERP and CRM platforms, minimizing IT overhead.
               </p>
               <button className="group flex items-center text-blue-400 hover:text-blue-300 font-medium">
                 Learn more
@@ -184,7 +184,7 @@ const AboutFielduo = () => {
               <div className="text-4xl mb-6">🔐</div>
               <h3 className="text-2xl font-bold mb-4">Scalable & Secure</h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Built on a modern cloud-native stack, fielduo scales with your team. Role-based access controls and ISO-aligned security practices protect your data from end to end.
+                Built on a modern cloud-native stack, our Field Service Application Software scales effortlessly with your team. Role-based access controls and ISO-aligned security practices ensure your data is protected end to end.
               </p>
               <button className="group flex items-center text-blue-400 hover:text-blue-300 font-medium">
                 Learn more
@@ -199,7 +199,7 @@ const AboutFielduo = () => {
               <div className="text-4xl mb-6">🤝</div>
               <h3 className="text-2xl font-bold mb-4">Dedicated Support</h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                We work hand in hand with every client. From personalized onboarding sessions to ongoing check-ins, our small but dedicated customer success team ensures you get the most value from fielduo.
+                We work hand in hand with every client to ensure they get the most from our Service Business Management Software. From personalized onboarding sessions to regular check-ins, our dedicated customer success team is committed to maximizing your value with Fielduo.
               </p>
               <button className="group flex items-center text-blue-400 hover:text-blue-300 font-medium">
                 Learn more
@@ -350,7 +350,7 @@ const AboutFielduo = () => {
               <div className="text-5xl mb-6">🌍</div>
               <h3 className="text-3xl font-bold mb-6">Our Vision</h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                To revolutionise field-service operations worldwide by delivering an intuitive, data-driven platform that empowers organisations to achieve peak efficiency, exceptional customer satisfaction, and sustainable growth.
+                To revolutionise field-service operations worldwide by delivering an intuitive, data-driven platform that empowers organisations to achieve peak efficiency, exceptional customer satisfaction, and sustainable growth.We envision a connected world where every service team operates with clarity, precision, and real-time insight.Through continuous innovation, we aim to simplify complex workflows and turn data into powerful decisions.Our goal is to set new standards for reliability, transparency, and customer experience in field-service management.
               </p>
             </div>
             
@@ -364,23 +364,23 @@ const AboutFielduo = () => {
               <ul className="text-gray-300 space-y-4">
                 <li className="flex items-start transform transition-all duration-300 hover:translate-x-2">
                   <span className="text-blue-400 mr-3 text-xl">•</span>
-                  <span>Develop a user-first mobile and web platform that streamlines job scheduling, reporting, and communication</span>
+                  <span>Develop a mobile app for field technicians that streamlines job scheduling, reporting, and communication.</span>
                 </li>
                 <li className="flex items-start transform transition-all duration-300 hover:translate-x-2">
                   <span className="text-blue-400 mr-3 text-xl">•</span>
-                  <span>Harness AI-powered analytics to deliver real-time insights and predictive maintenance alerts</span>
+                  <span>Harness AI-powered scheduling to deliver real-time insights, predictive maintenance alerts, and increased field efficiency.</span>
                 </li>
                 <li className="flex items-start transform transition-all duration-300 hover:translate-x-2">
                   <span className="text-blue-400 mr-3 text-xl">•</span>
-                  <span>Ensure seamless integration with existing business systems through open APIs and pre-built connectors</span>
+                  <span>Support work order management through seamless integration with existing business systems via open APIs and pre-built connectors.</span>
                 </li>
                 <li className="flex items-start transform transition-all duration-300 hover:translate-x-2">
                   <span className="text-blue-400 mr-3 text-xl">•</span>
-                  <span>Provide unrivalled customer support and continuous innovation to help our clients adapt and excel</span>
+                  <span>Provide a reliable offline mobile app and unmatched customer support, ensuring teams can continue working anywhere.</span>
                 </li>
                 <li className="flex items-start transform transition-all duration-300 hover:translate-x-2">
                   <span className="text-blue-400 mr-3 text-xl">•</span>
-                  <span>Uphold the highest standards of security, reliability, and privacy in all our solutions</span>
+                  <span>We uphold the highest standards of security, reliability, and privacy across all our Field Service Software solutions while continuously innovating to help clients adapt and excel.</span>
                 </li>
               </ul>
             </div>
