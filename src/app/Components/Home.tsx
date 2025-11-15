@@ -104,25 +104,25 @@ export default function Home() {
   const features = [
     {
       title: "Smart Scheduling",
-      description: "Intelligent scheduling that automatically optimizes routes and assigns the best technician for the job",
+      description: "Schedule jobs effortlessly with Fielduo's Smart Scheduling system. Automate technician assignments, reduce downtime, and boost field productivity.",
       icon: "📅",
       color: "from-blue-500 to-cyan-400"
     },
     {
       title: "Real-time Tracking",
-      description: "Live GPS tracking of your team with automated customer notifications",
+      description: "Fielduo's Real-time Tracking feature gives complete visibility into technician locations, job progress, and field activities with live GPS monitoring.",
       icon: "📍",
       color: "from-purple-500 to-pink-400"
     },
     {
       title: "Digital Invoicing",
-      description: "Create professional invoices and get paid faster with integrated payments",
+      description: "Fielduo's Digital Invoicing system automates billing, reduces manual errors, and ensures faster payments with secure, cloud-based invoice management.",
       icon: "📄",
       color: "from-green-500 to-emerald-400"
     },
     {
       title: "Customer Portal",
-      description: "Self-service portal for booking services and tracking job progress",
+      description: "Fielduo's Customer Portal enables clients to track service requests, view job updates, and access invoices in real time for improved transparency.",
       icon: "👥",
       color: "from-orange-500 to-amber-400"
     }
@@ -218,7 +218,7 @@ export default function Home() {
           </h1>
           
           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl sm:max-w-3xl mx-auto mb-6 md:mb-8 px-4" data-aos="fade-up" data-aos-delay="400">
-            Fielduo helps field service teams schedule smarter, dispatch faster, and increase revenue—without the operational headaches.
+            Fielduo' FSM software helps field service teams schedule smarter, dispatch faster, and increase revenue—without the operational headaches.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-8 md:mb-12 px-4" data-aos="fade-up" data-aos-delay="500">

@@ -216,7 +216,7 @@ const PricingPage = () => {
             data-aos="fade-down"
             data-aos-delay="100"
           >
-            Unmatched value with 31-79% savings vs competitors with integrated AI, ML, IoT
+             Save 31 - 79% compared to competitors using Fielduo's IoT enabled service software and intelligent AI-powered scheduling.
           </p>
           <div 
             className="flex flex-col sm:flex-row justify-center gap-4 mb-16"
@@ -246,11 +246,11 @@ const PricingPage = () => {
                 <div className="inline-block mb-4">
                   <span className="text-xs font-semibold px-3 py-1 bg-blue-900 text-blue-200 rounded-full">COST ADVANTAGE</span>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Why Choose Fielduo?</h2>
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Why Choose Fielduo's FSM?</h2>
                 <div className="mb-8">
                   <h3 className="text-xl font-bold mb-3 text-blue-400">Significant Cost Savings</h3>
                   <p className="text-gray-300 mb-4 text-lg leading-relaxed">
-                    Save $396-$51,060 annually depending on your business size. Leverage our advanced AI, ML, IoT features, and enjoy complete digital transformation at an unbeatable price.
+                    Save $396 - $51,060 annually with Fielduo's AI, ML & IoT-driven Field Service Software. Streamline field operations, boost customer satisfaction, and improve technician productivity effortlessly.
                   </p>
                   <div className="bg-gradient-to-r from-blue-900 to-purple-900 text-blue-200 px-4 py-3 rounded-xl inline-block shadow-lg">
                     <span className="font-bold">Average savings of 55%</span> compared to leading competitors
@@ -259,7 +259,7 @@ const PricingPage = () => {
                 <div>
                   <h3 className="text-xl font-bold mb-3 text-blue-400">Advanced Technology Integration</h3>
                   <p className="text-gray-300 mb-4 text-lg leading-relaxed">
-                    Fielduo combines cutting-edge AI, machine learning, and IoT capabilities in a single platform, eliminating the need for multiple expensive solutions.
+                    Fielduo unites AI, machine learning, and IoT to power intelligent technician scheduling, automate repetitive tasks, and deliver seamless IoT-enabled field service efficiency.
                   </p>
                   <div className="bg-gradient-to-r from-blue-900 to-purple-900 text-blue-200 px-4 py-3 rounded-xl inline-block shadow-lg">
                     <span className="font-bold">Enterprise-grade features</span> at small business prices
@@ -627,7 +627,7 @@ const PricingPage = () => {
       {/* Final CTA */}
       <section className="py-24 px-4 text-center bg-gradient-to-b from-black to-gray-900 relative z-10">
         <div className="container mx-auto max-w-3xl">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8" data-aos="fade-up">Ready to Transform Your Business?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8" data-aos="fade-up">Ready to Streamline Your Field Service Operations?</h2>
           <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
             Start your free 14-day trial today, no setup fees, cancel anytime!
           </p>

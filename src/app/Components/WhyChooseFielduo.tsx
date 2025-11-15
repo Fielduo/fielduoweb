@@ -19,7 +19,7 @@ const WhyChooseFielduo = () => {
   const keyValues = [
     {
       title: "Streamline Operations",
-      description: "Automated scheduling, dispatching, and work order management.",
+      description: "Automate scheduling, dispatching, and work order management to simplify daily field operations.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -29,7 +29,7 @@ const WhyChooseFielduo = () => {
     },
     {
       title: "Boost Productivity",
-      description: "Mobile-first workflows with full offline support for field teams.",
+      description: "Empower your field teams with mobile-first workflows and full offline access for seamless job execution.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -38,7 +38,7 @@ const WhyChooseFielduo = () => {
     },
     {
       title: "Enhance Customer Experience",
-      description: "24/7 customer portal with real-time updates and transparency.",
+      description: "Deliver 24/7 transparency through a customer portal with real-time updates, job tracking, and instant communication.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -47,7 +47,7 @@ const WhyChooseFielduo = () => {
     },
     {
       title: "Increase Revenue",
-      description: "Smart pricing tools, upsell workflows, and retention boosters.",
+      description: "Drive growth with smart pricing tools, upsell workflows, and automated retention strategies that maximize profit.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -59,7 +59,7 @@ const WhyChooseFielduo = () => {
   const features = [
     {
       title: "AI-Powered Scheduling",
-      description: "Auto-assign jobs based on skills, location, and availability—minimizing admin and maximizing field efficiency.",
+      description: "Schedule smarter with Smart Scheduling feature. Assign jobs instantly, optimize travel routes, and boost team efficiency with automation. q",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -68,7 +68,7 @@ const WhyChooseFielduo = () => {
     },
     {
       title: "Mobile App (Offline-First)",
-      description: "Works seamlessly with or without WiFi/data. No connectivity? No problem—fieldwork continues and syncs automatically.",
+      description: "Work anywhere with our Offline-First Mobile App. Field teams can view jobs, update status, and record work seamlessly - even with no internet.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -77,7 +77,7 @@ const WhyChooseFielduo = () => {
     },
     {
       title: "Real-Time Analytics",
-      description: "Instant dashboards and reporting for all your jobs, revenue, and technician KPIs in a single view.",
+      description: "Gain instant visibility into job performance, technician efficiency, and service metrics.Make smarter decisions with live dashboards and actionable data insights.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -86,7 +86,7 @@ const WhyChooseFielduo = () => {
     },
     {
       title: "IoT & AI Integration",
-      description: "Integrate smart devices, sensors, and leverage AI automation with zero hassle—future-proof your operations.",
+      description: "Connect devices, sensors, and equipment for real-time monitoring and predictive insights. Automate workflows, detect issues early, and optimize field operations with smart intelligence.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
@@ -95,7 +95,7 @@ const WhyChooseFielduo = () => {
     },
     {
       title: "Secure Cloud Platform",
-      description: "Reliable, scalable, and accessible worldwide. Rock-solid infrastructure with encryption and compliance.",
+      description: "Protect your data with encrypted, enterprise-grade cloud security and continuous backups. Access jobs, reports, and customer information safely from any device, anywhere.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -128,7 +128,7 @@ const WhyChooseFielduo = () => {
             Why Choose Fielduo
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Discover the features that make Fielduo the perfect solution for your business needs
+            Fielduo simplifies field service management with smart tools for scheduling, tracking, and reporting - helping your business work faster and smarter.
           </p>
         </div>
         

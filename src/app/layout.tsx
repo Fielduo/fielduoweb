@@ -20,12 +20,12 @@ const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.fielduo.com").
 
 export const metadata: Metadata = {
   title: {
-    default: "Fielduo – Future of Field Service Management",
+    default: "Next-Gen Field Service Management Software ",
     template: "%s | Fielduo",
   },
   metadataBase: new URL(siteUrl),
   description:
-    "Best field service management software in USA, UK & Europe. Simplify operations, boost productivity, and deliver exceptional customer experiences with our all-in-one FSM platform.",
+    "All-in-one Field Service Management Software for efficient scheduling, invoicing, and team tracking. Simplify operations with Fielduo.",
   keywords: [
     "field service management",
     "best field services",
@@ -41,23 +41,23 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Fielduo – Future of Field Service Management",
+    title: "Fielduo - Next-Gen Field Service Management Software",
     description:
-      "Best field service management software in USA, UK & Europe. Simplify operations, boost productivity, and deliver exceptional customer experiences with our all-in-one FSM platform.",
+      "All-in-one Field Service Management Software for efficient scheduling, invoicing, and team tracking. Simplify operations with Fielduo.",
     siteName: "Fielduo",
     images: [
       {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Fielduo – Future of Field Service Management",
+        alt: "Streamline your field operations with Fielduo",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fielduo – Future of Field Service Management",
+    title: "Fielduo - Future of Field Service Management",
     description:
       "Best field service management software in USA, UK & Europe. Simplify operations, boost productivity, and deliver exceptional customer experiences with our all-in-one FSM platform.",
     images: ["/logo.png"],
