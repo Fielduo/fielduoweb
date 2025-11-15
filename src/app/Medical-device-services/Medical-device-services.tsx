@@ -75,99 +75,99 @@ export default function MedicalDeviceServicesPage() {
 
   const faqs = [
     {
-      question: "What features does Fielduo offer for Medical Device Services?",
-      answer: "Fielduo provides a comprehensive suite of features specifically designed for medical device services including regulatory compliance tracking, automated preventive maintenance scheduling, certification management for technicians and equipment, emergency service prioritization, complete documentation and audit trails, and comprehensive asset management. Our platform also offers mobile capabilities for technicians, customer self-service portals, and advanced analytics tailored to healthcare equipment management needs."
+      question: "What exactly does Fielduo offer for medical device service management?",
+      answer: "Fielduo offers a comprehensive field service software solution for medical equipment manufacturers and healthcare facilities, featuring asset tracking, IoT monitoring, AI-powered scheduling, compliance documentation, technician management, and preventive maintenance."
     },
     {
-      question: "How can Medical Device Services businesses improve efficiency with field service management software?",
-      answer: "Medical device service businesses can improve efficiency by up to 40% through intelligent scheduling that considers technician certifications, equipment requirements, and healthcare facility priorities. Our software automates compliance documentation, provides technicians with complete equipment histories and manuals on mobile devices, enables real-time communication between healthcare staff and service teams, and offers data-driven insights to optimize resource allocation and maintenance schedules."
+      question: "How does Fielduo help reduce scheduling errors for medical device services?",
+      answer: "Fielduo uses AI to automatically assign technicians based on their skills, location, and certification, reducing mis-assignments and scheduling conflicts."
     },
     {
-      question: "How does the software help with regulatory compliance for Medical Device Services?",
-      answer: "Fielduo helps maintain regulatory compliance through comprehensive documentation of all service activities, automated tracking of FDA requirements and medical device regulations, certification management for both technicians and equipment, and detailed audit trails. Our system ensures all service activities meet healthcare standards, generates compliance reports for audits, and can be customized to meet specific regulatory requirements including FDA, ISO, and other healthcare regulations."
+      question: "Can Fielduo support regulatory compliance for medical devices (FDA, ISO, etc.)",
+      answer: "Fielduo provides automated compliance tracking, digital audit trails, and technician certification verification to ensure you meet FDA, ISO, and healthcare regulations."
     },
     {
-      question: "Does Fielduo offer emergency response or scheduling for Medical Device Services?",
-      answer: "Yes, Fielduo includes a specialized emergency response system for medical equipment with priority dispatch based on equipment criticality and patient impact. Our platform offers 24/7 emergency scheduling, real-time technician tracking, and immediate communication capabilities. The system can automatically identify and prioritize emergency calls, dispatch the nearest certified technician, and provide healthcare facilities with accurate ETAs and status updates throughout the service process."
+      question: "Is the software able to monitor device performance in real time?",
+      answer: "The platform offers IoT device monitoring and real-time analytics to track usage, detect anomalies, predict failures, and manage services proactively."
     },
     {
-      question: "How does Fielduo support inventory, assets, or equipment tracking for Medical Device Services?",
-      answer: "Fielduo provides robust medical device inventory and asset tracking with comprehensive equipment databases, parts management specific to medical devices, and complete asset lifecycle management. Our system tracks equipment location, service history, warranty information, certification status, and performance metrics. Technicians can access complete equipment information including manuals, service history, and parts requirements on their mobile devices, even when offline."
+      question: "What happens when a device fails or a critical issue arises?",
+      answer: "Fielduo’s emergency response and rapid dispatch module prioritises critical failures, offering real-time notifications and faster technician deployment to minimise downtime."
     },
     {
-      question: "How does the software enhance customer communication for Medical Device Services?",
-      answer: "Fielduo enhances customer communication through automated service notifications, real-time technician tracking with ETAs, digital service reports with detailed findings, and a healthcare-specific customer portal. Healthcare facilities can view equipment status, service schedules, and compliance documentation. The system facilitates secure communication between service teams and healthcare staff, provides documentation for regulatory purposes, and ensures all stakeholders have access to critical equipment information."
+      question: "Does Fielduo handle asset lifecycle and preventive maintenance for medical equipment?",
+      answer: "The software provides full lifecycle management—from installation to retirement—along with preventive maintenance scheduling based on usage and device condition, optimising costs and extending equipment life."
     },
     {
-      question: "What benefits do Medical Device Services clients see after implementing Fielduo?",
-      answer: "Medical device service clients typically see significant improvements including 99%+ equipment uptime, 100% regulatory compliance, 40% increase in service efficiency, and 25% reduction in operational costs. Additional benefits include improved patient safety, reduced emergency response times, better resource utilization, enhanced audit readiness, and data-driven insights that support strategic decision-making for healthcare equipment management."
+      question: "How quickly can we implement Fielduo and see benefits in our medical device service operations?",
+      answer: "Implementation time varies by scale and complexity, but many medical device servicing teams report improvements, such as reduced downtime and better scheduling, within months of deployment."
     }
   ];
 
   const features = [
     {
       title: "Regulatory Compliance",
-      description: "FDA and medical device regulation compliance tracking",
+      description: "FDA and Healthcare regulation alignment",
       icon: "📋",
-      detail: "Automated compliance documentation and audit trail management"
+      detail: "Healthcare compliance software that automates FDA tracking, maintains secure audit records, and alerts you before audits and critical compliance dates."
     },
     {
       title: "Preventive Maintenance",
-      description: "Automated PM scheduling for critical medical equipment",
+      description: "Effective scheduling to prevent unexpected breakdowns.",
       icon: "🔧",
-      detail: "Intelligent scheduling based on equipment criticality and usage patterns"
+      detail: "AI-powered scheduling minimises errors and downtime. IoT sensors monitor equipment health for proactive maintenance, prioritised by device criticality and usage."
     },
     {
       title: "Certification Management",
-      description: "Track technician certifications and equipment validations",
+      description: "Ensure certified experts handle every device.",
       icon: "📜",
-      detail: "Ensure only certified technicians work on specific medical devices"
+      detail: "Track technician certifications and renewals, flag unqualified techs, and receive automated alerts for expiring credentials!"
     },
     {
       title: "Emergency Service",
-      description: "Priority response for critical medical equipment failures",
+      description: "Monitor every phase with real-time insights.",
       icon: "🚨",
-      detail: "Rapid dispatch system with real-time status updates"
+      detail: "Improve your planning and budgeting with detailed lifecycle analytics. This will help you make informed decisions and drive project success."
     },
     {
       title: "Documentation Requirements",
-      description: "Complete audit trails and regulatory documentation",
+      description: "Real-Time Alerts for Faster Critical Response",
       icon: "📄",
-      detail: "Comprehensive documentation for FDA and healthcare compliance"
+      detail: "Prioritise critical failures with real-time notifications to minimise downtime and enhance collaboration among technicians, service teams, and clinicians."
     },
     {
       title: "Asset Management",
-      description: "Comprehensive medical equipment tracking and history",
+      description: "Smart analytics that optimise device usage and lifespan",
       icon: "🏥",
-      detail: "Complete lifecycle tracking from installation to decommissioning"
+      detail: "Monitor device health with an intuitive dashboard. Use predictive analytics to catch early issues and track key KPIs for informed repair and upgrade decisions. We're here to help."
     }
   ];
 
   const benefits = [
     {
       title: "Patient Safety",
-      description: "Ensure medical equipment reliability and performance.",
+      description: "Ensure accurate equipment performance and timely maintenance to optimise operational efficiency.Achieve a 99% improvement in device reliability.",
       icon: "❤️",
       stat: "99%",
       color: "from-red-500 to-pink-500"
     },
     {
       title: "Regulatory Compliance",
-      description: "Maintain FDA and healthcare regulatory requirements.",
+      description: "Ensure alignment with FDA guidelines, ISO standards, and healthcare quality requirements.We consistently achieve a 100% compliance rate.",
       icon: "✅",
       stat: "100%",
       color: "from-green-500 to-teal-500"
     },
     {
       title: "Minimize Downtime",
-      description: "Rapid response and first-time fix capabilities.",
+      description: "Quick response times, proactive monitoring, and streamlined workflows have led to a 40% reduction in equipment downtime.",
       icon: "⏱️",
       stat: "40%",
       color: "from-blue-500 to-indigo-500"
     },
     {
       title: "Cost Control",
-      description: "Optimize maintenance schedules and resource allocation.",
+      description: "Predictive maintenance and optimised resource allocation can lead to savings of 20-30% in operational and maintenance expenses..",
       icon: "💰",
       stat: "25%",
       color: "from-yellow-500 to-orange-500"
@@ -176,11 +176,6 @@ export default function MedicalDeviceServicesPage() {
 
   return (
     <>
-      <Head>
-        <title>Medical Device Services Management | Fielduo</title>
-        <meta name="description" content="Specialized field service management for medical equipment manufacturers and healthcare facilities" />
-      </Head>
-
       <div className="min-h-screen bg-black text-white">
         {/* Mouse Follower Effect */}
         <div 
@@ -245,7 +240,7 @@ export default function MedicalDeviceServicesPage() {
                 Medical Device <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Services</span> Management
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-                Specialized field service management for medical equipment manufacturers and healthcare facilities.
+                Smart field service management software for healthcare and device manufacturers using AI-powered scheduling to reduce scheduling errors and downtime.
               </p>
               
               <div className="flex flex-col sm:flex-row justify-center gap-6">
@@ -268,9 +263,9 @@ export default function MedicalDeviceServicesPage() {
         <div className="py-20 bg-gradient-to-b from-black to-gray-900">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Medical Device Features</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Medical Device Service Capabilities</h2>
               <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                End-to-end solutions tailored for healthcare equipment management
+                Tailored technology that lifts your device management operations from reactive to strategic.
               </p>
             </div>
             
@@ -300,7 +295,7 @@ export default function MedicalDeviceServicesPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Healthcare Service Benefits</h2>
               <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                Delivering measurable improvements in patient safety and operational efficiency
+                Achieving significant improvements in patient safety, operational uptime, and regulatory compliance.
               </p>
             </div>
             
@@ -375,9 +370,9 @@ export default function MedicalDeviceServicesPage() {
         <div className="bg-gradient-to-r from-blue-900/30 via-purple-900/30 to-pink-900/30 py-20 relative overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
           <div className="container mx-auto px-4 text-center relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Optimize Your Medical Device Service Operations</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Elevate Your Medical Device Service Productivity</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
-              Enhance patient safety, ensure compliance, and streamline your healthcare equipment management.
+              Improve response times, ensure safety, and simplify daily operations.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <button 

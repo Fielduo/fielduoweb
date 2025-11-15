@@ -75,121 +75,121 @@ export default function HealthcareFieldService() {
 
   const faqs = [
     {
-      question: "What features does Fielduo offer for Healthcare Field Services?",
-      answer: "Fielduo offers comprehensive healthcare-specific features including HIPAA-compliant patient scheduling, medical records integration, compliance management, equipment tracking, care coordination, emergency response, patient care plans, privacy protection, and performance analytics. Our platform is designed to support home health services, mobile clinics, and specialized patient care with enterprise-grade security and healthcare-specific workflows."
+      question: "How does Fielduo optimise scheduling for mobile healthcare teams?",
+      answer: "Fielduo uses intelligent routing and automated scheduling to match patients with the right provider, considering location, availability, and skill set. This reduces delays, prevents conflicts, and ensures more patients are seen efficiently."
     },
     {
-      question: "How can Healthcare Field Services businesses improve efficiency with field service management software?",
-      answer: "Healthcare field service businesses can improve efficiency by up to 40% through automated scheduling that optimizes routes for home visits and mobile clinics. Our software reduces administrative burden, ensures proper equipment and supplies are available, provides healthcare professionals with complete patient information, and enables real-time communication and coordination between care teams."
+      question: "Can Fielduo help manage home health and mobile clinic operations?",
+      answer: "Yes. The platform unifies home care services, mobile health units, and clinic workflows, providing real-time visibility, centralised communication, and streamlined coordination for all teams."
     },
     {
-      question: "How does the software help with regulatory compliance for Healthcare Field Services?",
-      answer: "Fielduo helps healthcare organizations maintain regulatory compliance through automated HIPAA compliance tracking, audit trails, documentation management, and staff certification tracking. Our system ensures all patient interactions are properly documented, privacy safeguards are maintained, and generates compliance reports for regulatory audits. We stay current with healthcare regulations and update our platform accordingly."
+      question: "How does Fielduo ensure HIPAA compliance and regulatory adherence?",
+      answer: "Fielduo tracks all healthcare activities digitally, maintains audit trails, automates compliance reporting, and secures patient data with end-to-end encryption, ensuring full adherence to HIPAA and other healthcare regulations."
     },
     {
-      question: "Does Fielduo offer emergency response or scheduling for Healthcare Field Services?",
-      answer: "Yes, Fielduo includes a comprehensive emergency response system with priority dispatch for urgent healthcare needs. Our platform can identify and prioritize emergency calls, dispatch the nearest qualified healthcare provider, and provide real-time status updates. The system maintains emergency response protocols, tracks response times, and ensures proper documentation for emergency situations."
+      question: "Does Fielduo support emergency response or urgent patient care?",
+      answer: "Absolutely. The platform prioritises urgent cases, sends instant notifications, and deploys healthcare teams quickly with optimised routes, improving response times and outcomes for critical patients."
     },
     {
-      question: "How does Fielduo support inventory, assets, or equipment tracking for Healthcare Field Services?",
-      answer: "Fielduo provides robust inventory and equipment management specifically designed for healthcare operations. Our system tracks medical equipment, supplies, and medications with barcode scanning, expiration date monitoring, and automated reorder alerts. We maintain equipment service histories, calibration schedules, and ensure healthcare providers have the necessary resources for each patient visit."
+      question: "How are medical equipment, inventory, and supplies managed?",
+      answer: "Fielduo provides real-time tracking of assets and equipment, including maintenance schedules, calibration alerts, and usage history, ensuring every resource is ready and available when needed."
     },
     {
-      question: "How does the software enhance customer communication for Healthcare Field Services?",
-      answer: "Fielduo enhances healthcare communication through secure messaging, appointment reminders, real-time provider tracking with ETAs, and a patient portal for accessing care information. Our system facilitates communication between care team members, patients, and family members while maintaining HIPAA compliance. Patients receive timely updates and can communicate securely with their healthcare providers."
+      question: "Can Fielduo improve communication between healthcare staff and patients?",
+      answer: "Yes. Centralised communication tools allow teams to share care plans, treatment notes, and updates instantly. Patients receive timely notifications, improving transparency and overall experience."
     },
     {
-      question: "What benefits do Healthcare Field Services clients see after implementing Fielduo?",
-      answer: "Healthcare clients typically see significant improvements including 40% reduction in administrative time, 98% compliance accuracy, 35% faster response times, and enhanced patient satisfaction. Additional benefits include improved resource utilization, better care coordination, reduced emergency response times, comprehensive compliance management, and data-driven insights for continuous service improvement."
+      question: "What measurable benefits can healthcare organisations expect from Fielduo?",
+      answer: "Organisations see reduced administrative burden, higher patient satisfaction, faster response times, improved compliance, optimised resource usage, and actionable insights from analytics that drive continuous improvement."
     }
   ];
 
   const features = [
     {
       title: "Patient Scheduling",
-      description: "Optimize home visits and mobile healthcare appointments with intelligent routing.",
+      description: "Optimise home visits and mobile healthcare appointments with intelligent routing.",
       icon: "📅",
-      detail: "AI-powered scheduling that considers patient needs, provider qualifications, and travel optimization"
+      detail: "Reduce delays and scheduling conflicts by automatically matching each patient with the appropriate provider based on factors like urgency, location, availability, and skill match."
     },
     {
       title: "Medical Records Integration",
       description: "Secure, HIPAA-compliant access to patient information and medical histories.",
       icon: "📋",
-      detail: "Seamless integration with EHR systems while maintaining strict privacy controls"
+      detail: "Providers can effortlessly retrieve records from EHR systems in real time while upholding complete privacy controls, guaranteeing that they always have the most recent, accurate patient data."
     },
     {
       title: "Compliance Management",
       description: "Automated tracking of HIPAA compliance and healthcare regulations.",
       icon: "✅",
-      detail: "Comprehensive audit trails and automated compliance reporting for regulatory requirements"
+      detail: "End-to-end compliance monitoring that keeps your company always ready for inspections with integrated audit trails, automatically generated reports, and real-time alerts."
     },
     {
       title: "Equipment Tracking",
       description: "Comprehensive management of mobile medical equipment and supplies.",
       icon: "🔧",
-      detail: "Real-time tracking of medical equipment with maintenance schedules and calibration alerts"
+      detail: "With real-time visibility across all mobile units and healthcare teams, you can schedule maintenance, keep an eye on usage, track device locations, and prevent loss."
     },
     {
       title: "Care Coordination",
       description: "Seamless multi-provider service coordination and communication.",
       icon: "👥",
-      detail: "Integrated care team communication with shared patient information and treatment plans"
+      detail: "By sharing treatment plans, care notes, and patient progress updates, centralised communication guarantees that specialists, nurses, and support staff remain in sync."
     },
     {
       title: "Emergency Response",
       description: "Priority scheduling and rapid response for urgent healthcare needs.",
       icon: "🚨",
-      detail: "Rapid deployment system with priority dispatch and real-time status updates"
+      detail: "Providers can reach vital patients more quickly thanks to smart routing, priority alerts, and quick team mobilisation, which enhances response times and results."
     },
     {
       title: "Patient Care Plans",
       description: "Customizable care plans and treatment tracking for improved outcomes.",
       icon: "🏥",
-      detail: "Personalized care plan management with progress tracking and outcome measurement"
+      detail: "Create care plans with ease, update interventions, and monitor patient progress all in one location, guaranteeing reliable and superior treatment."
     },
     {
       title: "Privacy Protection",
       description: "End-to-end data encryption and privacy safeguards for patient information.",
       icon: "🔒",
-      detail: "Enterprise-grade security with end-to-end encryption and strict access controls"
+      detail: "Secure authentication, stringent access controls, and enterprise-grade encryption safeguard private medical information on all devices and processes."
     },
     {
       title: "Performance Analytics",
       description: "Comprehensive reporting on service delivery and patient outcomes.",
       icon: "📊",
-      detail: "Advanced analytics on care quality, response times, and operational efficiency"
+      detail: "To assess team performance, gauge the quality of care, spot trends, and maximise operational efficiency, access real-time dashboards and analytics."
     }
   ];
 
   const advantages = [
     {
       title: "Enhanced Patient Access",
-      description: "Expand healthcare services to underserved areas with optimized routing and scheduling.",
+      description: "Using effective routing, provide care to isolated, underserved, and challenging-to-reach locations.",
       icon: "🌍"
     },
     {
       title: "Superior Care Quality",
-      description: "Comprehensive patient information and coordinated care leads to better health outcomes.",
+      description: "Make informed, connected decisions to provide reliable, high-quality healthcare.",
       icon: "❤️"
     },
     {
       title: "Regulatory Compliance",
-      description: "Maintain healthcare privacy and safety regulations with automated compliance tracking.",
+      description: "Stay compliant with healthcare privacy and safety regulations without manual overhead",
       icon: "📜"
     },
     {
-      title: "Optimized Resource Allocation",
-      description: "Efficient scheduling and resource management reduces costs and improves service delivery.",
+      title: "Smarter Resource Utilisation",
+      description: "Optimise workforce, equipment, and time to reduce operational waste.",
       icon: "⚖️"
     },
     {
-      title: "Improved Response Times",
-      description: "Rapid deployment for emergency situations with priority scheduling capabilities.",
+      title: "Faster Critical Response",
+      description: "Respond quickly to urgent cases with intelligent prioritisation tools.",
       icon: "⏱️"
     },
     {
-      title: "Data-Driven Decisions",
-      description: "Comprehensive analytics provide insights for continuous service improvement.",
+      title: "Actionable Operational Insights",
+      description: "Leverage analytics to strengthen performance and improve care delivery.",
       icon: "📈"
     }
   ];
@@ -211,11 +211,6 @@ export default function HealthcareFieldService() {
 
   return (
     <>
-      <Head>
-        <title>Healthcare Field Service Management Solutions | Fielduo</title>
-        <meta name="description" content="Streamline mobile healthcare operations with our enterprise platform designed for home health services, mobile clinics, and specialized patient care" />
-      </Head>
-
       <div className="min-h-screen bg-black text-white">
         {/* Mouse Follower Effect */}
         <div 
@@ -302,10 +297,10 @@ export default function HealthcareFieldService() {
                 <span className="text-blue-400 font-medium">Healthcare Excellence</span>
               </div>
               <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight">
-                Healthcare Field Service <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Management</span> Solutions
+                Healthcare Field Service <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Management</span> Made Smarter
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-                Streamline mobile healthcare operations including home health services, mobile clinics, and specialized patient care with our enterprise platform.
+                Deliver high-quality healthcare services anywhere — home health care services, mobile clinics, emergency medical services, and specialised patient support.
               </p>
               
               <div className="flex flex-col sm:flex-row justify-center gap-6">
@@ -328,9 +323,9 @@ export default function HealthcareFieldService() {
         <div className="py-20 bg-gradient-to-b from-black to-gray-900">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Comprehensive Healthcare Service Management</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Your Comprehensive Healthcare Service System</h2>
               <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                Enterprise-grade tools designed specifically for mobile healthcare delivery
+                Advanced tools engineered for efficient mobile health clinic delivery.
               </p>
             </div>
             
@@ -358,9 +353,9 @@ export default function HealthcareFieldService() {
         <div className="py-20 bg-gradient-to-b from-gray-900 to-black">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Strategic Advantages for Mobile Healthcare</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Strengthening Mobile Healthcare Capabilities</h2>
               <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                Delivering accessible, compliant, and high-quality healthcare in the field
+                Empower teams to deliver compliant and high-quality care anywhere.
               </p>
             </div>
             
@@ -429,7 +424,7 @@ export default function HealthcareFieldService() {
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
               <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                Common questions about our healthcare service management solutions
+                Everything you need to know about Fielduo’s healthcare management service solutions.
               </p>
             </div>
             
