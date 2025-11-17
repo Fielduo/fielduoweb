@@ -41,7 +41,7 @@ const PricingPage = () => {
     {
       name: "STARTER PLAN",
       monthlyPrice: { 
-        USD: "$36", 
+        USD: "$45", 
         GBP: "£24", 
         INR: "₹736", 
         AED: "د.إ83", 
@@ -53,7 +53,7 @@ const PricingPage = () => {
         NZD: "NZ$52"
       },
       yearlyPrice: { 
-        USD: "$30.00", 
+        USD: "$36.00", 
         GBP: "£20.00", 
         INR: "₹613", 
         AED: "د.إ69", 
@@ -84,7 +84,7 @@ const PricingPage = () => {
     {
       name: "PROFESSIONAL PLAN",
       monthlyPrice: { 
-        USD: "$72", 
+        USD: "$95", 
         GBP: "£48", 
         INR: "₹1,472", 
         AED: "د.إ167", 
@@ -96,7 +96,7 @@ const PricingPage = () => {
         NZD: "NZ$105"
       },
       yearlyPrice: { 
-        USD: "$60.00", 
+        USD: "$72.00", 
         GBP: "£40.00", 
         INR: "₹1,226", 
         AED: "د.إ139", 
@@ -125,7 +125,7 @@ const PricingPage = () => {
     {
       name: "ENTERPRISE PLAN",
       monthlyPrice: { 
-        USD: "$120", 
+        USD: "$150", 
         GBP: "£81", 
         INR: "₹2,453", 
         AED: "د.إ279", 
@@ -137,7 +137,7 @@ const PricingPage = () => {
         NZD: "NZ$175"
       },
       yearlyPrice: { 
-        USD: "$100.00", 
+        USD: "$120.00", 
         GBP: "£67.00", 
         INR: "₹2,044", 
         AED: "د.إ232", 

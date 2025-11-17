@@ -390,7 +390,7 @@ export default function Home() {
         </div>
 
         {/* Testimonials */}
-        <div className="mb-12 md:mb-16 lg:mb-20 px-4" data-aos="fade-up">
+        {/* <div className="mb-12 md:mb-16 lg:mb-20 px-4" data-aos="fade-up">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8">
             Loved by Service <span className="text-indigo-400">Professionals</span>
           </h2>
@@ -438,7 +438,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
 
       </div>
 
